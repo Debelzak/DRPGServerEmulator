@@ -1,0 +1,6 @@
+<Portals>
+    <Portal MapID="1" PosX="3" PosY="120" DestMapID="2" DestPosX="165" DestPosY="17"/>
+    <Portal MapID="2" PosX="170" PosY="12" DestMapID="1" DestPosX="7" DestPosY="116"/>
+    <Portal MapID="1" PosX="94" PosY="147" DestMapID="3" DestPosX="22" DestPosY="12"/>
+    <Portal MapID="3" PosX="25" PosY="6" DestMapID="1" DestPosX="91" DestPosY="142"/>
+</Portals>
