@@ -1,5 +1,6 @@
-using System.Net;
 using System.Xml.Linq;
+using DRPGServer.Game.Data.Managers;
+using DRPGServer.Managers;
 
 namespace DRPGServer
 {
@@ -37,7 +38,7 @@ namespace DRPGServer
         public static MapServerConfig MapServerConfig { get; private set; } = new();
         public static GlobalServerConfig GlobalServerConfig { get; private set; } = new();
 
-        public static void Load(string path = "Config/Config.xml")
+        private static void Load(string path = "Config.xml")
         {
             if (!File.Exists(path))
                 throw new FileNotFoundException($"Config file [{path}] not found.");
@@ -54,6 +55,15 @@ namespace DRPGServer
             ParseServer(config.Element("ChannelServer"), ChannelServerConfig);
             ParseServer(config.Element("MapServer"), MapServerConfig);
             ParseServer(config.Element("GlobalServer"), GlobalServerConfig);
+        }
+
+        public static void LoadAll()
+        {
+            Load();
+            DigimonDataManager.Load();
+            PortalDataManager.Load();
+            SpawnDataManager.Load();
+            ZoneManager.Load();
         }
 
         private static void ParseServer(XElement? element, dynamic server)

@@ -2,6 +2,8 @@ using System.Net;
 using System.Net.Sockets;
 using System.Reflection;
 using DRPGServer.Network.Enum;
+using DRPGServer.Network.Packets;
+using DRPGServer.Network.Handlers;
 using System.Collections.Concurrent;
 using System.Data;
 
@@ -36,7 +38,7 @@ namespace DRPGServer.Network
             Socket.Listen(backlog: 100);
         }
 
-        public virtual void TryProcessPacket(byte[] data, Client client) { }
+        public virtual void TryProcessPacket(InPacket packet, Client client) { }
 
         private void AutoRegisterHandlers()
         {
@@ -61,16 +63,13 @@ namespace DRPGServer.Network
 
         protected virtual void OnClientDisconnected(Client client)
         {
-            Logger.Info($"[{serverType}] Connection closed with {client.IP}");
+            Logger.Info($"[{serverType}] Connection closed from {client.IP}");
         }
 
         public void RegisterUsername(string username, Client client)
         {
             if (!connectedUsers.TryAdd(username, client))
-            {
-                throw new InvalidOperationException($"Trying to register an already registered/connected user: {username}");
-            }
-            Logger.Debug($"[{serverType}] Registering username [{username}] to client connection id [{client.ConnectionId}].");
+                Logger.Error($"[{serverType}] Unable to register [{username}] to client connection id [{client.ConnectionId}].");
         }
 
         public Client? GetClientByUsername(string username)
@@ -90,7 +89,6 @@ namespace DRPGServer.Network
                 
                 OnClientConnected(client);
 
-                Logger.Debug($"[{serverType}] Registering new client connection [{client.ConnectionId}]");
                 connectedClients.TryAdd(client.ConnectionId, client);
 
                 _ = Task.Run(() => HandleClient(client));
@@ -99,7 +97,7 @@ namespace DRPGServer.Network
 
         public void HandleClient(Client client)
         {
-            byte[] buffer = new byte[16384];
+            byte[] buffer = new byte[2048];
 
             try
             {
@@ -108,7 +106,15 @@ namespace DRPGServer.Network
                     int bytesRead = client.Receive(buffer);
                     if (bytesRead == 0) break;
 
-                    TryProcessPacket(buffer[..bytesRead], client);
+                    byte[] received = buffer[..bytesRead];
+                    client.PacketBuffer.Append(received);
+
+                    var packets = client.PacketBuffer.ExtractPackets();
+                    
+                    foreach (var packet in packets)
+                    {
+                        TryProcessPacket(packet, client); // Agora direto com InPacket
+                    }
                 }
             }
             catch (SocketException socketException)
@@ -128,14 +134,14 @@ namespace DRPGServer.Network
             }
             finally
             {
-                if (client.Session?.Username is not null)
+                if (client.User?.Username is not null)
                 {
-                    connectedUsers.TryRemove(client.Session.Username, out _);
-                    Logger.Debug($"[{serverType}] Unregistering [{client.Session.Username}] from client connection id {client.ConnectionId}.");
+                    if(!connectedUsers.TryRemove(client.User.Username, out _))
+                        Logger.Error($"[{serverType}] Unable to unregister user [{client.User.Username}] from client connection id {client.ConnectionId}.");
                 }
 
-                connectedClients.TryRemove(client.ConnectionId, out _);
-                Logger.Debug($"[{serverType}] Unregistering client connection [{client.ConnectionId}].");
+                if(!connectedClients.TryRemove(client.ConnectionId, out _))
+                    Logger.Error($"[{serverType}] Unable to unregister client connection id [{client.ConnectionId}].");
 
                 OnClientDisconnected(client);
                 client.Dispose();

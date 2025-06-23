@@ -33,14 +33,14 @@ namespace DRPGServer.Network.Packets
 
             // Validate packet size
             int contentLength = (int)(Stream.Length - 14);
-            if (contentLength < 0 || Size != contentLength + 14)
+            if (Size != data.Length)
                 return;
 
-            // Validade checksum
-            byte[] contentBuffer = new byte[contentLength];
-            Buffer.BlockCopy(data, 14, contentBuffer, 0, contentLength);
-            if (CheckSum != CRC16.Compute(contentBuffer))
-                return;
+            // Validade checksum                <- Broken. Client sometimes sends wrong CRC. Not even official server validates checksum.
+            //byte[] contentBuffer = new byte[contentLength];
+            //Buffer.BlockCopy(data, 14, contentBuffer, 0, contentLength);
+            //if (CheckSum != CRC16.Compute(contentBuffer))
+            //  return; 
 
             IsValid = true;
         }

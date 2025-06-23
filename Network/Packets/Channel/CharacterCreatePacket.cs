@@ -12,15 +12,15 @@ namespace DRPGServer.Network.Packets.Channel
 
         protected override void Serialize()
         {
-            Write(2);               // Unknown (Client 1, Success from server 2, error 3)
-            Write(0);               // Error code? (If above=2, this=0); 102 = Tamer Already exists
-            Write((short)0x4f01);   // Unknown
-            Write((short)0x003d);   // Random (3B, 3C, 3D, 3E)
-            Write((short)0x0038);   // Random (37, 38, 39, 3A)
-            Write(CharacterModel);         // Character Model
-            Write(Nickname, 21);  // Character Name
-            Write(DigimonId);      // Digimon ID
-            Write(DigimonNickname, 26);   // Digimon Name
+            WriteInt(2);               // Unknown (Client 1, Success from server 2, error 3)
+            WriteInt(0);               // Error code? (If above=2, this=0); 102 = Tamer Already exists
+            WriteShort((short)0x4f01);   // Unknown
+            WriteShort((short)0x003d);   // Random (3B, 3C, 3D, 3E)
+            WriteShort((short)0x0038);   // Random (37, 38, 39, 3A)
+            WriteByte(CharacterModel);         // Character Model
+            WriteString(Nickname, 21);  // Character Name
+            WriteUShort(DigimonId);      // Digimon ID
+            WriteString(DigimonNickname, 26);   // Digimon Name
         }
     }
 }

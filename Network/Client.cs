@@ -1,19 +1,22 @@
 using System.Net;
 using System.Net.Sockets;
+using DRPGServer.Game.Entities;
 using DRPGServer.Managers;
 using DRPGServer.Network.Enum;
 using DRPGServer.Network.Packets;
 
 namespace DRPGServer.Network
 {
-    class Client : IDisposable
+    public class Client : IDisposable
     {
         public Guid ConnectionId { get; private set; } = Guid.NewGuid();
         public IPAddress IP { get; }
         public int RemotePort { get; }
-        public Session? Session { get; private set; } = null;
+        public User? User { get; private set; }
+        public Player? Player { get; private set; }
         public SERVER_TYPE ServerType = SERVER_TYPE.UNKNOWN;
         private readonly Socket socket;
+        public PacketBuffer PacketBuffer { get; } = new();
         private bool disposed = false;
 
         public Client(Socket socket, SERVER_TYPE serverType)
@@ -50,23 +53,32 @@ namespace DRPGServer.Network
             return socket.Receive(buffer);
         }
 
-        public void SessionStart(string username)
+        public void SessionStart(User user)
         {
-            Session ??= new Session(username, this);
+            if (User != null) throw new InvalidOperationException("Trying to start an already-started session.");
+
+            SetUser(user);
+            
             switch (ServerType)
             {
-                case SERVER_TYPE.LOGIN_SERVER: ServerManager.LoginServer.RegisterUsername(username, this); break;
-                case SERVER_TYPE.CHANNEL_SERVER: ServerManager.ChannelServer.RegisterUsername(username, this); break;
-                case SERVER_TYPE.MAP_SERVER: ServerManager.MapServer.RegisterUsername(username, this); break;
-                //case SERVER_TYPE.GLOBAL_SERVER: ServerManager.GlobalServer.RegisterUsername(username, this); break;
+                case SERVER_TYPE.LOGIN_SERVER: ServerManager.LoginServer.RegisterUsername(user.Username, this); break;
+                case SERVER_TYPE.CHANNEL_SERVER: ServerManager.ChannelServer.RegisterUsername(user.Username, this); break;
+                case SERVER_TYPE.MAP_SERVER: ServerManager.MapServer.RegisterUsername(user.Username, this); break;
+                case SERVER_TYPE.GLOBAL_SERVER: ServerManager.GlobalServer.RegisterUsername(user.Username, this); break;
                 default: throw new Exception("Tried to start session within a server that doesn't exist");
             }
         }
 
-        public void SessionDestroy()
+        public void SetUser(User user)
         {
-            Session?.Dispose();
-            Session = null;
+            if (User != null) throw new InvalidOperationException("Trying to attach user to a client that already has a user.");
+            User = user;
+        }
+
+        public void SetPlayer(Player player)
+        {
+            if (Player != null) throw new InvalidOperationException("Trying to attach player to a client that already has a player.");
+            Player = player;
         }
 
         public async Task DisposeDelayed(int milliseconds)
@@ -91,8 +103,9 @@ namespace DRPGServer.Network
                 throw new Exception($"Error on closing socket: {ex.Message}");
             }
 
+            Player?.Dispose();
+
             socket.Close();
-            SessionDestroy();
 
             disposed = true;
             GC.SuppressFinalize(this);

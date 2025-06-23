@@ -11,13 +11,24 @@ namespace DRPGServer.Network.Handlers.Channel
         public SERVER_TYPE ServerType => SERVER_TYPE.CHANNEL_SERVER;
         public void Process(InPacket packet, Client client)
         {
+            if (client.User == null) return;
+            if (client.Player != null) return;
+
+            int unknown_1 = packet.ReadInt();
+            int unknown_2 = packet.ReadInt();
+            uint characterUid = packet.ReadUInt();
+            string passwordMD5 = packet.ReadString(40);
+
+            // Remove character from
+            client.User.RemoveCharacter(characterUid);
+
             // Send response
-            var data = new CharacterDeletePacket();
-            client.Send(data);
+            var deletePacket = new CharacterDeletePacket();
+            client.Send(deletePacket);
 
             // Send chracter list again
-            var data2 = new CharacterListPacket();
-            client.Send(data2);
+            var refreshedCharacterList = new CharacterListPacket(client.User.Characters);
+            client.Send(refreshedCharacterList);
         }
     }
 }

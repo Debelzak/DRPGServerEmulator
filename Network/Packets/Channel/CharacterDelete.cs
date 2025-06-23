@@ -5,12 +5,14 @@ namespace DRPGServer.Network.Packets.Channel
 {
     class CharacterDeletePacket() : OutPacket((ushort)PACKET_ID.CHANNEL_CHAR_DELETE)
     {
+        public uint CharacterUID { get; set; }
+        public string PasswordMD5 { get; set; } = string.Empty;
         protected override void Serialize()
         {
-            Write(2);  
-            Write(0);
-            Write(20000);
-            Write(Utils.MD5(string.Empty), 40);
+            WriteInt(2);
+            WriteInt(0);
+            WriteUInt(CharacterUID);
+            WriteString(Utils.MD5(PasswordMD5), 40);
         }
     }
 }

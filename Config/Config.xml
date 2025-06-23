@@ -1,8 +1,0 @@
-<Config>
-  <DebugMode>true</DebugMode>
-  <DebugPackets>true</DebugPackets>
-  <ChannelServer BindIP="0.0.0.0" Port="7000"/>
-  <LoginServer BindIP="0.0.0.0" Port="7001"/>
-  <MapServer BindIP="0.0.0.0" Port="7002"/>
-  <GlobalServer BindIP="0.0.0.0" Port="7003"/>
-</Config>

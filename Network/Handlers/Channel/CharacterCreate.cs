@@ -1,9 +1,9 @@
+using DRPGServer.Game.Entities;
 using DRPGServer.Game.Enum;
 using DRPGServer.Network.Enum;
 using DRPGServer.Network.Enum.Channel;
 using DRPGServer.Network.Packets;
 using DRPGServer.Network.Packets.Channel;
-using static DRPGServer.Network.Packets.Channel.CharacterListPacket;
 
 namespace DRPGServer.Network.Handlers.Channel
 {
@@ -13,6 +13,8 @@ namespace DRPGServer.Network.Handlers.Channel
         public SERVER_TYPE ServerType => SERVER_TYPE.CHANNEL_SERVER;
         public void Process(InPacket packet, Client client)
         {
+            if (client.User == null) return;
+
             // Reads data first
             int unknown1 = packet.ReadInt();
             int unknown2 = packet.ReadInt();
@@ -24,6 +26,34 @@ namespace DRPGServer.Network.Handlers.Channel
             ushort digimonId = packet.ReadUShort();
             string digimonName = packet.ReadString(26);
 
+            byte targetSlot = 1;
+            foreach (Character character in client.User.Characters)
+            {
+                if (character.UID == 0) break;
+                targetSlot++;
+            }
+            // No available slots
+            if (targetSlot > 4) return;
+
+            // Creates new character
+            var newCharacter = new Character()
+            {
+                UID = (uint)new Random().Next(100000, 200000), // Database UID
+                TamerID = tamerId,
+                Nickname = characterName,
+                Level = 1,
+                PositionX = 56,
+                PositionY = 56,
+                EquippedItems = [],
+                DigimonID = digimonId,
+                DigimonLevel = 1,
+                DigimonNickname = digimonName,
+                TotalBattles = 0,
+                TotalWins = 0,
+                LocationID = (byte)MAP_ID.VILLAGE_OF_BEGINNING,
+            };
+            client.User.SetCharacterSlot(targetSlot, newCharacter);
+
             // Send character creation result
             var characterCreate = new CharacterCreatePacket()
             {
@@ -34,28 +64,13 @@ namespace DRPGServer.Network.Handlers.Channel
             };
             client.Send(characterCreate);
 
+            //
+            // Must reload user data here
+            //
+
             // Re-sends character list packet with new character
-            var data2 = new CharacterListPacket
-            {
-                Slot2 = new Character
-                {
-                    id = 20000,
-                    tamerId = tamerId,
-                    nickname = characterName,
-                    level = 1,
-                    positionX = 57,
-                    positionY = 86,
-                    equippedItems = [],
-                    digimonId = digimonId,
-                    digimonLevel = 1,
-                    digimonNickname = digimonName,
-                    totalBattles = 0,
-                    totalWins = 0,
-                    slotId = 1,
-                    locationId = (byte)MAP_ID.VILLAGE_OF_BEGINNING,
-                }
-            };
-            client.Send(data2);
+            var refreshedCharactersPacket = new CharacterListPacket(client.User.Characters);
+            client.Send(refreshedCharactersPacket);
         }
     }
 }

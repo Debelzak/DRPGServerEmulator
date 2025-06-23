@@ -13,37 +13,42 @@ namespace DRPGServer.Network.Packets
             writer = new(Stream);
         }
 
-        public void Write(byte data)
+        public void WriteByte(byte data)
         {
             writer.Write(data);
         }
 
-        public void Write(byte[] data)
+        public void WriteBytes(byte[] data)
         {
             writer.Write(data);
         }
 
-        public void Write(int value)
+        public void WriteInt(int value)
         {
             writer.Write(value);
         }
 
-        public void Write(uint value)
+        public void WriteUInt(uint value)
         {
             writer.Write(value);
         }
 
-        public void Write(short value)
+        public void WriteShort(short value)
         {
             writer.Write(value);
         }
 
-        public void Write(ushort value)
+        public void WriteUShort(ushort value)
         {
             writer.Write(value);
         }
 
-        public void Write(string value, int length)
+        public void WriteDouble(double value)
+        {
+            writer.Write(value);
+        }
+
+        public void WriteString(string value, int length)
         {
             writer.Write(Utils.StringToFixedBytes(value, length));
         }

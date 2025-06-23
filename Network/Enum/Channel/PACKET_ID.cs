@@ -9,5 +9,6 @@ namespace DRPGServer.Network.Enum.Channel
         CHANNEL_CHAR_DELETE = 0x11,
         CHANNEL_CHAR_LIST = 0x12,
         CHANNEL_USER_CHECK = 0x14,
+        CHANNEL_MAP_CONNECTION_CONFIRM = 0x16
     }
 }

@@ -7,7 +7,7 @@ namespace DRPGServer.Network.Packets.Channel
     {
         protected override void Serialize()
         {
-            Write("debelzak26", 22);
+            WriteString("debelzak26", 22);
         }
     }
 }

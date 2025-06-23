@@ -2,7 +2,7 @@ using DRPGServer.Network.Enum;
 using DRPGServer.Network.Packets.Login;
 using DRPGServer.Network.Packets;
 using DRPGServer.Network.Enum.Login;
-using DRPGServer.Managers;
+using DRPGServer.Game.Entities;
 
 namespace DRPGServer.Network.Handlers.Login
 {
@@ -15,8 +15,6 @@ namespace DRPGServer.Network.Handlers.Login
             var unknown_1 = packet.ReadUInt(); //1
             var unknown_2 = packet.ReadUInt(); //0
             var username = packet.ReadString(20);
-
-            client.SessionStart(username);
 
             var data = new FirstHandshakePacket
             {

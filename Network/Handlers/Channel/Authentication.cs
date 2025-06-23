@@ -2,7 +2,8 @@ using DRPGServer.Network.Enum;
 using DRPGServer.Network.Packets.Channel;
 using DRPGServer.Network.Packets;
 using DRPGServer.Network.Enum.Channel;
-using DRPGServer.Managers;
+using DRPGServer.Game.Entities;
+using DRPGServer.Game.Enum;
 
 namespace DRPGServer.Network.Handlers.Channel
 {
@@ -23,20 +24,40 @@ namespace DRPGServer.Network.Handlers.Channel
 
             if (username == "debelzak26") // Placeholder connection success
             {
+                User user = new User(username) { AuthorityLevel = 3 };
+
+                client.SessionStart(user); // Placeholder
+                var character1 = new Character()
+                {
+                    UID = 50000,
+                    TamerID = (byte)TAMER_ID.TAKATO,
+                    Nickname = "Debelzak",
+                    Level = 1,
+                    PositionX = 29,
+                    PositionY = 67,
+                    EquippedItems = [],
+                    DigimonID = (ushort)DIGIMON_ID.GIGIMON,
+                    DigimonLevel = 1,
+                    DigimonNickname = "Guilmon",
+                    TotalBattles = 0,
+                    TotalWins = 0,
+                    LocationID = (byte)MAP_ID.VILLAGE_OF_BEGINNING,
+                };
+                client.User?.SetCharacterSlot(1, character1);
+
                 var data = new AuthenticationPacket
                 {
-                    ErrorCode = ERROR_ID.SUCCESS,
+                    ErrorCode = (int)ERROR_ID.SUCCESS,
                     Username = username,
                 };
 
-                client.SessionStart(username);
                 client.Send(data);
             }
             else
             {
                 var data = new AuthenticationPacket
                 {
-                    ErrorCode = ERROR_ID.INVALID_CREDENTIALS,
+                    ErrorCode = (int)ERROR_ID.INVALID_CREDENTIALS,
                     Username = username,
                     AuthKey = authKey,
                     Mac1 = mac_1,

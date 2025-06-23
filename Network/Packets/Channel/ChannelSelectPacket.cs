@@ -7,10 +7,10 @@ namespace DRPGServer.Network.Packets.Channel
     {
         protected override void Serialize()
         {
-            Write(2);               // 2 = Connect ; 3 = Error ; 
-            Write(0);
-            Write(3);
-            Write("MoveInteractive_Digimon_035", 40);
+            WriteInt(2);               // 2 = Connect ; 3 = Error ; 
+            WriteInt(0);
+            WriteInt(3);
+            WriteString("MoveInteractive_Digimon_035", 40);
         }
     }
 }

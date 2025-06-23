@@ -7,7 +7,7 @@ namespace DRPGServer.Network.Packets.Map
     {
         protected override void Serialize()
         {
-            // This packet is empty by nature
+            // This packet is empty
         }
     }
 }

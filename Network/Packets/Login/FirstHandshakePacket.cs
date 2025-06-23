@@ -8,9 +8,9 @@ namespace DRPGServer.Network.Packets.Login
 
         protected override void Serialize()
         {
-            Write(3);
-            Write(0x68);
-            Write(Username, 20);
+            WriteInt(3);
+            WriteInt(0x68);
+            WriteString(Username, 20);
         }
     }
 }

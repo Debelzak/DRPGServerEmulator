@@ -13,7 +13,7 @@ namespace DRPGServer.Network.Packets.Channel
     class AuthenticationPacket() : OutPacket((ushort)PACKET_ID.CHANNEL_AUTH)
     {
         private int ResultCode = 3; // 2 = Success; 3 = Error ; 
-        public ERROR_ID ErrorCode { get; set; } = ERROR_ID.INVALID_CREDENTIALS;
+        public int ErrorCode { get; set; } = (int)ERROR_ID.INVALID_CREDENTIALS;
         public string Username { get; set; } = string.Empty;
         public string AuthKey { get; set; } = string.Empty;
         public byte[] unknown_1 { get; private set; } = new byte[60];
@@ -24,17 +24,17 @@ namespace DRPGServer.Network.Packets.Channel
 
         protected override void Serialize()
         {
-            ResultCode = (ErrorCode == ERROR_ID.SUCCESS) ? 2 : 3;
+            ResultCode = (ErrorCode == (int)ERROR_ID.SUCCESS) ? 2 : 3;
 
-            Write(ResultCode);
-            Write((int)ErrorCode);
-            Write(Username, 21);
-            Write(AuthKey, 40);
-            Write(unknown_1);
-            Write(Mac1, 21);
-            Write(Mac2, 21);
-            Write(Mac3, 21);
-            Write(unknown_2);
+            WriteInt(ResultCode);
+            WriteInt(ErrorCode);
+            WriteString(Username, 21);
+            WriteString(AuthKey, 40);
+            WriteBytes(unknown_1);
+            WriteString(Mac1, 21);
+            WriteString(Mac2, 21);
+            WriteString(Mac3, 21);
+            WriteBytes(unknown_2);
         }
     }
 }
