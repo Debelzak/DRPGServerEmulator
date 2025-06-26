@@ -1,6 +1,6 @@
 using DRPGServer.Network.Enum.Map;
 
-namespace DRPGServer.Network.Packets.Map
+namespace DRPGServer.Network.Packets
 {
     class _0xe6_Packet() : OutPacket((ushort)PACKET_ID._0xe6_PACKET)
     {

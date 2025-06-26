@@ -36,7 +36,12 @@ namespace DRPGServer.Network.Handlers.Channel
             if (targetSlot > 4) return;
 
             // Creates new character
-            var newCharacter = new Character()
+            var digimon = new Digimon(digimonId)
+            {
+                Name = digimonName,
+            };
+
+            var newCharacter = new Character(digimon)
             {
                 UID = (uint)new Random().Next(100000, 200000), // Database UID
                 TamerID = tamerId,
@@ -45,9 +50,6 @@ namespace DRPGServer.Network.Handlers.Channel
                 PositionX = 56,
                 PositionY = 56,
                 EquippedItems = [],
-                DigimonID = digimonId,
-                DigimonLevel = 1,
-                DigimonNickname = digimonName,
                 TotalBattles = 0,
                 TotalWins = 0,
                 LocationID = (byte)MAP_ID.VILLAGE_OF_BEGINNING,
@@ -57,10 +59,10 @@ namespace DRPGServer.Network.Handlers.Channel
             // Send character creation result
             var characterCreate = new CharacterCreatePacket()
             {
-                CharacterModel = tamerId,
-                Nickname = characterName,
-                DigimonId = digimonId,
-                DigimonNickname = digimonName
+                CharacterModel = newCharacter.TamerID,
+                Nickname = newCharacter.Nickname,
+                DigimonId = newCharacter.MainDigimon.DigimonID,
+                DigimonNickname = newCharacter.MainDigimon.Name,
             };
             client.Send(characterCreate);
 

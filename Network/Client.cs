@@ -17,7 +17,7 @@ namespace DRPGServer.Network
         public SERVER_TYPE ServerType = SERVER_TYPE.UNKNOWN;
         private readonly Socket socket;
         public PacketBuffer PacketBuffer { get; } = new();
-        private bool disposed = false;
+        public bool IsDisposed { get; private set; } = false;
 
         public Client(Socket socket, SERVER_TYPE serverType)
         {
@@ -33,7 +33,7 @@ namespace DRPGServer.Network
 
         public void Send(OutPacket packet)
         {
-            if (disposed) throw new ObjectDisposedException(nameof(Client));
+            if (IsDisposed) throw new ObjectDisposedException(nameof(Client));
 
             byte[] buffer = packet.GetBytes();
 
@@ -45,7 +45,7 @@ namespace DRPGServer.Network
 
         public int Receive(byte[] buffer)
         {
-            if (disposed)
+            if (IsDisposed)
             {
                 return 0;
             }
@@ -83,7 +83,7 @@ namespace DRPGServer.Network
 
         public async Task DisposeDelayed(int milliseconds)
         {
-            if (disposed) return;
+            if (IsDisposed) return;
 
             await Task.Delay(milliseconds);
 
@@ -92,7 +92,7 @@ namespace DRPGServer.Network
 
         public void Dispose()
         {
-            if (disposed) return;
+            if (IsDisposed) return;
 
             try
             {
@@ -107,7 +107,7 @@ namespace DRPGServer.Network
 
             socket.Close();
 
-            disposed = true;
+            IsDisposed = true;
             GC.SuppressFinalize(this);
         }
     }

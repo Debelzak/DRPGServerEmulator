@@ -33,6 +33,16 @@ namespace DRPGServer.Network.Packets
             writer.Write(value);
         }
 
+        public void WriteLong(long value)
+        {
+            writer.Write(value);
+        }
+
+        public void WriteULong(ulong value)
+        {
+            writer.Write(value);
+        }
+
         public void WriteShort(short value)
         {
             writer.Write(value);

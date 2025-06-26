@@ -1,4 +1,5 @@
 using System.Xml.Linq;
+using DRPGServer.Game.Data.Models;
 using DRPGServer.Game.Entities;
 
 namespace DRPGServer.Game.Data.Managers
@@ -6,7 +7,7 @@ namespace DRPGServer.Game.Data.Managers
     public static class DigimonDataManager
     {
         private static readonly string path = "Resources/Digimon/DigimonData.xml";
-        public static Dictionary<int, Digimon> DigimonTable { get; private set; } = new();
+        public static Dictionary<int, DigimonTableEntry> DigimonTable { get; private set; } = [];
 
         public static void Load()
         {
@@ -26,9 +27,17 @@ namespace DRPGServer.Game.Data.Managers
                 var digimonId = ushort.Parse(digimon.Attribute("ID")?.Value ?? "0");
                 if (digimonId == 0) continue;
 
-                var toAdd = new Digimon(digimonId)
+                var toAdd = new DigimonTableEntry()
                 {
+                    DigimonID = digimonId,
                     Name = digimon.Attribute("Name")?.Value ?? string.Empty,
+                    BaseHP = int.Parse(digimon.Attribute("BaseHP")?.Value ?? "0"),
+                    BaseVP = int.Parse(digimon.Attribute("BaseVP")?.Value ?? "0"),
+                    BaseATK = int.Parse(digimon.Attribute("BaseATK")?.Value ?? "0"),
+                    BaseDEF = int.Parse(digimon.Attribute("BaseDEF")?.Value ?? "0"),
+                    BaseBR = int.Parse(digimon.Attribute("BaseBR")?.Value ?? "0"),
+                    ActionGauge = int.Parse(digimon.Attribute("ActionGauge")?.Value ?? "0"),
+                    Classification = byte.Parse(digimon.Attribute("Classification")?.Value ?? "0"),
                 };
 
                 DigimonTable.Add(digimonId, toAdd);

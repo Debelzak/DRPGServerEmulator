@@ -1,11 +1,7 @@
 using DRPGServer.Network.Enum;
 using DRPGServer.Network.Enum.Map;
 using DRPGServer.Network.Packets;
-using DRPGServer.Network.Packets.Map.Character;
-using DRPGServer.Game.Data.Managers;
-using DRPGServer.Network.Packets.Map.Battle;
-using DRPGServer.Game.Enum;
-using DRPGServer.Game.Entities;
+using DRPGServer.Network.Packets.Map;
 
 namespace DRPGServer.Network.Handlers.Map
 {
@@ -29,7 +25,7 @@ namespace DRPGServer.Network.Handlers.Map
 
             var data = new MoveCharacterPacket();
             client.Send(data);
-            
+
             foreach (var portal in player.Zone.Portals)
             {
                 if (portal.AffectsPosition(positionX, positionY))

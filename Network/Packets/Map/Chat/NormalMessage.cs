@@ -1,7 +1,7 @@
 using DRPGServer.Network.Enum;
 using DRPGServer.Network.Enum.Map;
 
-namespace DRPGServer.Network.Packets.Map.Chat
+namespace DRPGServer.Network.Packets.Map
 {
     public class NormalMessagePacket() : OutPacket((ushort)PACKET_ID.MAP_CHAT_MESSAGE_NORMAL)
     {

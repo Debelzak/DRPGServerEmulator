@@ -1,10 +1,11 @@
+using DRPGServer.Game.Entities;
 using DRPGServer.Game.Enum;
 using DRPGServer.Network.Enum;
 using DRPGServer.Network.Enum.Map;
 
-namespace DRPGServer.Network.Packets.Map.Character
+namespace DRPGServer.Network.Packets.Map
 {
-    public class CharacterDataPacket() : OutPacket((ushort)PACKET_ID.MAP_CHARACTER_DATA)
+    public class CharacterDataPacket(Player player) : OutPacket((ushort)PACKET_ID.MAP_CHARACTER_DATA)
     {
         // Character data
         public uint CharacterUID { get; set; }
@@ -17,8 +18,8 @@ namespace DRPGServer.Network.Packets.Map.Character
         private int NextLevelEXP { get; set; } = 10;
         private int Fame { get; set; } = 0;
         private double Bits { get; set; } = 50_000;
-        private int TotalWins { get; set; } = 0;
-        private int TotalBattles { get; set; } = 0;
+        //private int TotalWins { get; set; } = 0;
+        //private int TotalBattles { get; set; } = 0;
         private short RankedWins { get; set; } = 0;
         private short RankedBattles { get; set; } = 0;
         private int RankedPoints { get; set; } = 1800;
@@ -28,26 +29,13 @@ namespace DRPGServer.Network.Packets.Map.Character
         public uint DigimonID { get; set; }
         public string DigimonNickname { get; set; } = string.Empty;
         public ushort DigimonLevel { get; set; }
-        private int DigimonSTR { get; set; } = 10;
         private int DigimonBonusSTR { get; set; } = 0;
-        private int DigimonAGI { get; set; } = 10;
         private int DigimonBonusAGI { get; set; } = 0;
-        private int DigimonCON { get; set; } = 10;
         private int DigimonBonusCON { get; set; } = 0;
-        private int DigimonINT { get; set; } = 10;
         private int DigimonBonusINT { get; set; } = 0;
-        private int DigimonATK { get; set; } = 145;
         private short DigimonBonusRateATK { get; set; } = 0;
-        private int DigimonDEF { get; set; } = 87;
         private short DigimonBonusRateDEF { get; set; } = 0;
-        private int DigimonBR { get; set; } = 131;
         private short DigimonBonusRateBR { get; set; } = 0;
-        private int DigimonCurrentHP { get; set; } = 115;
-        private int DigimonMaxHP { get; set; } = 115;
-        private int DigimonCurrentVP { get; set; } = 115;
-        private int DigimonMaxVP { get; set; } = 115;
-        private int DigimonCurrentEVP { get; set; } = 0;
-        private int DigimonMaxEVP { get; set; } = 0;
         private int DigimonTotalBattles { get; set; } = 3;
         private int DigimonTotalWins { get; set; } = 3;
         private ushort DigimonAbilityPoints { get; set; } = 0;
@@ -57,20 +45,20 @@ namespace DRPGServer.Network.Packets.Map.Character
         
         protected override void Serialize()
         {
-            WriteUInt(CharacterUID);
-            WriteBytes(Utils.GenerateRandomSessionId(false)); //Character SessionID?
-            WriteString(Nickname, 21);
-            WriteByte(TamerID);
+            WriteUInt(player.Character.UID);
+            WriteBytes(player.Character.Serial.Data); //Character SessionID?
+            WriteString(player.Character.Nickname, 21);
+            WriteByte(player.Character.TamerID);
             WriteUShort((ushort)1); // ?
-            WriteUShort(Level);
+            WriteUShort(player.Character.Level);
             WriteBytes([0x00, 0x00,]); // ?
             WriteInt(Fame);
             WriteInt(EXP);
             WriteInt(NextLevelEXP);
             WriteBytes([0x00, 0x00, 0x00, 0x00]); // ?
             WriteDouble(Bits);
-            WriteInt(TotalWins);
-            WriteInt(TotalBattles);
+            WriteInt(player.Character.TotalWins);
+            WriteInt(player.Character.TotalBattles);
             WriteShort(RankedWins);
             WriteShort(RankedBattles);
             WriteInt(RankedPoints);
@@ -150,16 +138,16 @@ namespace DRPGServer.Network.Packets.Map.Character
                 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
             ]);
 
-            WriteInt(200000); // DigimonID (Database) ?
-            WriteBytes(Utils.GenerateRandomSessionId(true));
-            WriteUInt(DigimonID);
+            WriteUInt(player.Character.MainDigimon.UID); // DigimonID (Database) ?
+            WriteBytes(player.Character.MainDigimon.Serial.Data);
+            WriteUInt(player.Character.MainDigimon.DigimonID);
             WriteByte((byte)1); // ??
-            WriteString(DigimonNickname, 21);
-            WriteUShort(DigimonLevel);
-            WriteInt(DigimonSTR);
-            WriteInt(DigimonAGI);
-            WriteInt(DigimonCON);
-            WriteInt(DigimonINT);
+            WriteString(player.Character.MainDigimon.Name, 21);
+            WriteUShort(player.Character.MainDigimon.Level);
+            WriteInt(player.Character.MainDigimon.STR);
+            WriteInt(player.Character.MainDigimon.AGI);
+            WriteInt(player.Character.MainDigimon.CON);
+            WriteInt(player.Character.MainDigimon.INT);
             WriteBytes([
                 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
@@ -181,26 +169,24 @@ namespace DRPGServer.Network.Packets.Map.Character
                 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
             ]);
-            WriteInt(DigimonCurrentHP);
-            WriteInt(DigimonCurrentVP);
-            WriteInt(DigimonCurrentEVP);
-            WriteInt(DigimonATK);
-            WriteInt(DigimonDEF);
-            WriteInt(DigimonBR);
-            WriteBytes([
-                0x00, 0x00, 0x00, 0x80, 0x00, 0x00, 0x00, 0x00,   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                0xF4, 0x01, 0x00, 0x00,
-            ]);
-            WriteInt(DigimonMaxHP);
-            WriteInt(DigimonMaxVP);
-            WriteInt(DigimonMaxEVP);
-            WriteBytes([
-                0x00, 0x00, 0x00, 0x00, 0xA0, 0x86, 0x01, 0x00,   0x18, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-            ]);
-            WriteInt(DigimonTotalWins);
-            WriteInt(DigimonTotalBattles);
-            WriteUShort(DigimonAbilityPoints);
-            WriteUShort(DigimonSkillPoints);
+            WriteInt(player.Character.MainDigimon.CurrentHP);
+            WriteInt(player.Character.MainDigimon.CurrentVP);
+            WriteInt(player.Character.MainDigimon.CurrentEVP);
+            WriteInt(player.Character.MainDigimon.ATK);
+            WriteInt(player.Character.MainDigimon.DEF);
+            WriteInt(player.Character.MainDigimon.BR);
+            WriteBytes([0x00, 0x00, 0x00, 0x80, 0x00, 0x00, 0x00, 0x00]);
+            WriteLong(player.Character.MainDigimon.EXP);
+            WriteBytes([0xF4, 0x01, 0x00, 0x00]);
+            WriteInt(player.Character.MainDigimon.MaxHP);
+            WriteInt(player.Character.MainDigimon.MaxVP);
+            WriteInt(player.Character.MainDigimon.MaxEVP);
+            WriteBytes([0x00, 0x00, 0x00, 0x00, 0xA0, 0x86, 0x01, 0x00]);
+            WriteLong(player.Character.MainDigimon.NextLevelEXP);
+            WriteInt(player.Character.MainDigimon.TotalWins);
+            WriteInt(player.Character.MainDigimon.TotalBattles);
+            WriteUShort(player.Character.MainDigimon.AbilityPoints);
+            WriteUShort(player.Character.MainDigimon.SkillPoints);
             WriteBytes([0x0C, 0x00, 0x00, 0x00]); // First skill slot
             WriteBytes([0x06, 0x00]); // ??
             WriteShort(FirstSkillLevel);
@@ -412,8 +398,8 @@ namespace DRPGServer.Network.Packets.Map.Character
                 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
             ]);
-            WriteShort(PositionX);
-            WriteShort(PositionY);
+            WriteShort(player.Character.PositionX);
+            WriteShort(player.Character.PositionY);
             WriteBytes([
                 0x00, 0x00, 0x00, 0x00,
                 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,

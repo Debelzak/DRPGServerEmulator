@@ -1,5 +1,6 @@
 using System.Security.Cryptography;
 using System.Text.RegularExpressions;
+using DRPGServer.Common;
 using DRPGServer.Game.Data.Managers;
 using DRPGServer.Game.Enum;
 
@@ -7,7 +8,7 @@ namespace DRPGServer.Game.Entities
 {
     public class WildDigimon
     {
-        public byte[] Serial { get; private set; }
+        public Serial Serial { get; private set; } = new();
         public byte MapID { get; set; }
         public short PositionX { get; private set; }
         public short PositionY { get; private set; }
@@ -18,7 +19,7 @@ namespace DRPGServer.Game.Entities
         public DigimonSpawn Spawn { get; private set; }
 
         public bool IsDead { get; set; }
-        public bool IsBattling { get; set; }
+        public bool IsBusy { get; set; }
 
         public double RespawnCooldown { get; set; }
 
@@ -26,8 +27,6 @@ namespace DRPGServer.Game.Entities
         {
             Spawn = spawn;
             var dice = new Random();
-            Serial = new byte[16];
-            RandomNumberGenerator.Fill(Serial);
 
             MapID = spawn.MapID;
             RespawnCooldown = spawn.RespawnTime;
@@ -59,7 +58,7 @@ namespace DRPGServer.Game.Entities
                                 Level = partner.Level,
                             });
 
-                            if (Partners.Count >= 2) break;
+                            if (Partners.Count >= 4) break;
                         }
                         break;
                     }
@@ -81,16 +80,32 @@ namespace DRPGServer.Game.Entities
         {
             return (normX, normY) switch
             {
-                ( 0, -1) => (byte)DIRECTION_ID.NORTHWEST,
-                ( 1, -1) => (byte)DIRECTION_ID.SOUTHEAST,
-                ( 1,  0) => (byte)DIRECTION_ID.SOUTHEAST,
-                ( 1,  1) => (byte)DIRECTION_ID.SOUTHEAST,
-                ( 0,  1) => (byte)DIRECTION_ID.SOUTHEAST,
-                (-1,  1) => (byte)DIRECTION_ID.NORTHWEST,
-                (-1,  0) => (byte)DIRECTION_ID.NORTHWEST,
+                (0, -1) => (byte)DIRECTION_ID.NORTHWEST,
+                (1, -1) => (byte)DIRECTION_ID.SOUTHEAST,
+                (1, 0) => (byte)DIRECTION_ID.SOUTHEAST,
+                (1, 1) => (byte)DIRECTION_ID.SOUTHEAST,
+                (0, 1) => (byte)DIRECTION_ID.SOUTHEAST,
+                (-1, 1) => (byte)DIRECTION_ID.NORTHWEST,
+                (-1, 0) => (byte)DIRECTION_ID.NORTHWEST,
                 (-1, -1) => (byte)DIRECTION_ID.NORTHWEST,
-                _        => (byte)DIRECTION_ID.NORTHWEST
+                _ => (byte)DIRECTION_ID.NORTHWEST
             };
+        }
+
+        /// <summary>
+        /// Fully restores HP and resets ActionBar meter.
+        /// </summary>
+        public void Reset()
+        {
+            IsBusy = false;
+            Leader.CurrentActionGauge = 0;
+            Leader.Heal(Leader.MaxHP, Leader.MaxVP, Leader.MaxEVP);
+
+            foreach (var partner in Partners)
+            {
+                partner.Heal(partner.MaxHP, partner.MaxVP, partner.MaxEVP);
+                partner.CurrentActionGauge = 0;
+            }
         }
     }
 }

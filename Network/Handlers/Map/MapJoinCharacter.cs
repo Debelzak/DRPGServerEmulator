@@ -1,11 +1,9 @@
 using DRPGServer.Game.Entities;
-using DRPGServer.Game.Enum;
 using DRPGServer.Managers;
 using DRPGServer.Network.Enum;
 using DRPGServer.Network.Enum.Map;
 using DRPGServer.Network.Packets;
 using DRPGServer.Network.Packets.Map;
-using DRPGServer.Network.Packets.Map.Character;
 
 namespace DRPGServer.Network.Handlers.Map
 {
@@ -37,20 +35,10 @@ namespace DRPGServer.Network.Handlers.Map
             // Finally proceed
             var player = new Player(client, character, zone);
             client.SessionStart(user);
+            player.Character.MainDigimon.SetOwner(player);
             client.SetPlayer(player);
 
-            var userData = new CharacterDataPacket()
-            {
-                CharacterUID = character.UID,
-                Nickname = character.Nickname,
-                TamerID = character.TamerID,
-                Level = character.Level,
-                PositionX = character.PositionX,
-                PositionY = character.PositionY,
-                DigimonID = character.DigimonID,
-                DigimonNickname = character.DigimonNickname,
-                DigimonLevel = character.DigimonLevel,
-            };
+            var userData = new CharacterDataPacket(player);
 
             client.Send(userData);
 
@@ -119,9 +107,9 @@ namespace DRPGServer.Network.Handlers.Map
             var _0x152 = new _0x152_Packet();
             client.Send(_0x152);
 
-            // ??
-            var _0xb4 = new _0xb4_Packet();
-            client.Send(_0xb4);
+            // Digimon individual info
+            var mainDigimonInfo = new SingleDigimonInfoPacket(player.Character.MainDigimon);
+            client.Send(mainDigimonInfo);
 
             // ??
             var _0x73 = new _0x73_Packet();

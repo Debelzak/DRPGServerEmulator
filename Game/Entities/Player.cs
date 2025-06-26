@@ -1,7 +1,6 @@
-using DRPGServer.Common;
 using DRPGServer.Managers;
 using DRPGServer.Network;
-using DRPGServer.Network.Packets.Map.Character;
+using DRPGServer.Network.Packets.Map;
 
 namespace DRPGServer.Game.Entities
 {
@@ -9,10 +8,14 @@ namespace DRPGServer.Game.Entities
     {
         public Client Client { get; private set; }
         public Character Character { get; private set; }
+        public List<Digimon> Digimons { get; set; } = [];
         public Zone Zone { get; set; }
+        public Battle? Battle = null;
         public byte MapID => Character.LocationID;
         public short PositionX => Character.PositionX;
         public short PositionY => Character.PositionY;
+
+        public bool CanMove = true;
 
         private bool disposed = false;
 
@@ -21,7 +24,7 @@ namespace DRPGServer.Game.Entities
             Client = client;
             Character = character;
             Zone = zone;
-
+            Digimons.Add(Character.MainDigimon);
             Zone.AddPlayer(this);
         }
 
@@ -53,9 +56,11 @@ namespace DRPGServer.Game.Entities
         {
             if (disposed) return;
 
+            Battle?.Participants.Remove(this);
             Zone.RemovePlayer(this);
-            GC.SuppressFinalize(this);
+
             disposed = true;
+            GC.SuppressFinalize(this);
         }
     }
 }

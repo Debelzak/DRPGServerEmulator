@@ -1,25 +1,30 @@
+using DRGPServer.Managers;
+using DRPGServer.Common;
 using DRPGServer.Game.Data.Managers;
 using DRPGServer.Game.Entities;
 using DRPGServer.Game.Enum;
 using DRPGServer.Network.Packets;
-using DRPGServer.Network.Packets.Map.Battle;
+using DRPGServer.Network.Packets.Map;
 
 namespace DRPGServer.Game
 {
     public class Zone
     {
-        const int WILD_DIGIMON_MOVE_TICK_INTERVAL = 3_000;
+        const int AUTO_RECOVERY_TICK = 5_000;
+        const int WILD_DIGIMON_MOVE_TICK_INTERVAL = 2_000;
 
         public byte MapID { get; }
         private List<Player> players = [];
         private List<Portal> portals = [];
         public IReadOnlyList<Portal> Portals => portals;
         private List<DigimonSpawn> spawns = [];
-        private List<WildDigimon> wildDigimons = [];
+        private Dictionary<string, WildDigimon> wildDigimons = [];
 
         private double wildDigimonTickTimer;
+        private double autoHealTickTimer;
 
         private static readonly Random dice = new();
+
         public Zone(byte mapId)
         {
             MapID = mapId;
@@ -33,11 +38,20 @@ namespace DRPGServer.Game
 
         public void Update(double deltaTime)
         {
+            // Wild digimon movement tick
             wildDigimonTickTimer += deltaTime;
             if (wildDigimonTickTimer >= WILD_DIGIMON_MOVE_TICK_INTERVAL)
             {
                 wildDigimonTickTimer = 0;
                 OnWildDigimonUpdateTick();
+            }
+
+            // Player auto recovery per time
+            autoHealTickTimer += deltaTime;
+            if (autoHealTickTimer >= AUTO_RECOVERY_TICK)
+            {
+                autoHealTickTimer = 0;
+                OnAutoRecovery();
             }
         }
 
@@ -60,10 +74,10 @@ namespace DRPGServer.Game
 
         public void ReloadSpawns()
         {
-            foreach (var digimon in wildDigimons)
+            foreach (var digimon in wildDigimons.Values)
             {
                 digimon.IsDead = true;
-                var packet = new WildDigimonUpdatePacket(digimon) { State = 6 };
+                var packet = new WildDigimonUpdatePacket(digimon);
                 Broadcast(packet);
             }
 
@@ -82,12 +96,25 @@ namespace DRPGServer.Game
             }
         }
 
+        private void OnAutoRecovery()
+        {
+            foreach (var player in players)
+            {
+                if (player.Battle != null) continue;
+
+                player.Character.MainDigimon.Heal(5, 5, 0);
+
+                var recoveryStatus = new RefreshDigimonStatusPacket(player.Character.MainDigimon);
+                player.Client.Send(recoveryStatus);
+            }
+        }
+
         private void OnWildDigimonUpdateTick()
         {
             int moveChance = 50; // Each tick each digimon has a moveChance% chance of moving.
             List<WildDigimon> toRespawn = [];
 
-            foreach (var wildDigimon in wildDigimons)
+            foreach (var wildDigimon in wildDigimons.Values)
             {
                 // Respawn
                 if (wildDigimon.IsDead)
@@ -99,6 +126,7 @@ namespace DRPGServer.Game
                     continue;
                 }
 
+                // Movement
                 var spawn = spawns.FirstOrDefault(d => d.DigimonID == wildDigimon.Leader.DigimonID);
                 if (spawn == null) continue;
 
@@ -118,15 +146,15 @@ namespace DRPGServer.Game
                 var packet = new WildDigimonUpdatePacket(wildDigimon);
                 Broadcast(packet);
             }
-            
+
             // Respawn
             foreach (var deadDigimon in toRespawn)
             {
                 var spawn = deadDigimon.Spawn;
-                wildDigimons.Remove(deadDigimon);
-                
+                wildDigimons.Remove(deadDigimon.Serial.ToString());
+
                 var spawnedDigimon = new WildDigimon(spawn);
-                wildDigimons.Add(spawnedDigimon);
+                wildDigimons.Add(spawnedDigimon.Serial.ToString(), spawnedDigimon);
 
                 var packet = new WildDigimonUpdatePacket(spawnedDigimon);
                 Broadcast(packet);
@@ -157,12 +185,12 @@ namespace DRPGServer.Game
 
         public void AddWildDigimon(WildDigimon wildDigimon)
         {
-            wildDigimons.Add(wildDigimon);
+            wildDigimons.Add(wildDigimon.Serial.ToString(), wildDigimon);
         }
 
         public void RemoveWildDigimon(WildDigimon wildDigimon)
         {
-            wildDigimons.Remove(wildDigimon);
+            wildDigimons.Remove(wildDigimon.Serial.ToString());
         }
 
         public void Broadcast(OutPacket packet)
@@ -181,6 +209,16 @@ namespace DRPGServer.Game
 
                 player.Client.Send(packet);
             }
+        }
+
+        public Battle? RequestBattle(Player participant, byte[] enemyRequestSerial)
+        {
+            Serial serial = new(enemyRequestSerial);
+            if (!wildDigimons.TryGetValue(serial.ToString(), out var enemy)) return null;
+            if (enemy.IsBusy || enemy.IsDead) return null;
+
+            var battle = BattleManager.CreateBattle(participant, enemy);
+            return battle;
         }
     }
 }

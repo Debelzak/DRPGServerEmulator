@@ -1,7 +1,7 @@
 using DRPGServer.Network.Enum;
 using DRPGServer.Network.Packets;
 using DRPGServer.Network.Enum.Global;
-using DRPGServer.Network.Packets.Global.UI;
+using DRPGServer.Network.Packets.Global;
 
 namespace DRPGServer.Network.Handlers.Global.UI
 {

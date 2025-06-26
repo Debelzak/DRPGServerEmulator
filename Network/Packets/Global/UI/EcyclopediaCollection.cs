@@ -1,6 +1,6 @@
 using DRPGServer.Network.Enum.Global;
 
-namespace DRPGServer.Network.Packets.Global.UI
+namespace DRPGServer.Network.Packets.Global
 {
     class EncyclopediaCollectionPacket() : OutPacket((ushort)PACKET_ID.GLOBAL_ENCYCLOPEDIA_COLLECTION)
     {

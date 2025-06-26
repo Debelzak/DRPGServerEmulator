@@ -1,6 +1,7 @@
 <DigimonData>
-    <Digimon 
-        ID="14"
-        Name="Yuramon"
-    />
+    <Digimon ID="10" Name="Gigimon" BaseHP="115" BaseVP="115" BaseATK="145" BaseDEF="87" BaseBR="131" ActionGauge="500" Classification="2"/>
+    <Digimon ID="14" Name="Yuramon" BaseHP="96" BaseVP="50" BaseATK="60" BaseDEF="43" BaseBR="65" ActionGauge="500" Classification="2"/>
+    <Digimon ID="17" Name="Pyocomon" BaseHP="116" BaseVP="50" BaseATK="80" BaseDEF="63" BaseBR="85" ActionGauge="500" Classification="2"/> <!--lv1 10 0 10 0 -->
+    <Digimon ID="46" Name="Puroromon" BaseHP="136" BaseVP="125" BaseATK="98" BaseDEF="72" BaseBR="100" ActionGauge="500" Classification="2"/> <!--lv4 12 0 14 0 -->
+    <Digimon ID="44" Name="Tanemon" BaseHP="155" BaseVP="200" BaseATK="116" BaseDEF="81" BaseBR="115" ActionGauge="500" Classification="2"/> <!--lv7 13 0 20 0 -->
 </DigimonData>

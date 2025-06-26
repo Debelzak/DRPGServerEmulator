@@ -1,7 +1,6 @@
 using DRPGServer.Network.Enum;
 using DRPGServer.Network.Enum.Map;
 using DRPGServer.Network.Packets;
-using DRPGServer.Network.Packets.Map.Battle;
 
 namespace DRPGServer.Network.Handlers.Map.Battle
 {
@@ -11,11 +10,14 @@ namespace DRPGServer.Network.Handlers.Map.Battle
         public SERVER_TYPE ServerType => SERVER_TYPE.MAP_SERVER;
         public void Process(InPacket packet, Client client)
         {
+            var player = client.Player;
+            if (player == null) return;
+
             int unknown_1 = packet.ReadInt();
             byte[] hash = packet.ReadBytes(16);
 
-            var startBattlePacket = new StartBattlePacket();
-            client.Send(startBattlePacket);
+            var battle = player.Zone.RequestBattle(player, hash);
+            battle?.Start();
         }
     }
 }

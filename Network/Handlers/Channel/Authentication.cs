@@ -27,7 +27,18 @@ namespace DRPGServer.Network.Handlers.Channel
                 User user = new User(username) { AuthorityLevel = 3 };
 
                 client.SessionStart(user); // Placeholder
-                var character1 = new Character()
+                var digimon = new Digimon((ushort)DIGIMON_ID.GIGIMON)
+                {
+                    UID = 200000,
+                    Level = 1,
+                    Name = "Guilmon",
+                    STR = 10,//25,
+                    AGI = 10,//20,
+                    CON = 10,//20,
+                    INT = 10,//15,
+                };
+
+                var character1 = new Character(digimon)
                 {
                     UID = 50000,
                     TamerID = (byte)TAMER_ID.TAKATO,
@@ -36,9 +47,6 @@ namespace DRPGServer.Network.Handlers.Channel
                     PositionX = 29,
                     PositionY = 67,
                     EquippedItems = [],
-                    DigimonID = (ushort)DIGIMON_ID.GIGIMON,
-                    DigimonLevel = 1,
-                    DigimonNickname = "Guilmon",
                     TotalBattles = 0,
                     TotalWins = 0,
                     LocationID = (byte)MAP_ID.VILLAGE_OF_BEGINNING,

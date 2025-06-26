@@ -1,6 +1,6 @@
 using DRPGServer.Network.Enum.Login;
 
-namespace DRPGServer.Network.Packets.Login
+namespace DRPGServer.Network.Packets
 {
     class FirstHandshakePacket() : OutPacket((ushort)PACKET_ID.LOGIN_FIRST_HANDSHAKE)
     {

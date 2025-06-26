@@ -2,7 +2,7 @@ using DRPGServer.Game.Commands;
 using DRPGServer.Network.Enum;
 using DRPGServer.Network.Enum.Map;
 using DRPGServer.Network.Packets;
-using DRPGServer.Network.Packets.Map.Chat;
+using DRPGServer.Network.Packets.Map;
 
 namespace DRPGServer.Network.Handlers.Map.Chat
 {

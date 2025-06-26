@@ -3,7 +3,7 @@ using DRPGServer.Game.Entities;
 using DRPGServer.Game.Enum;
 using DRPGServer.Network.Enum.Map;
 
-namespace DRPGServer.Network.Packets.Map.Battle
+namespace DRPGServer.Network.Packets.Map
 {
     public class WildDigimonUpdatePacket : OutPacket
     {
@@ -15,12 +15,12 @@ namespace DRPGServer.Network.Packets.Map.Battle
         public byte Classification { get; set; }
         public short PositionX { get; set; }
         public short PositionY { get; set; }
-        public byte State { get; set; } = 1;
+        public byte State { get; private set; }
         public ushort FacingDirection { get; set; }
 
         public WildDigimonUpdatePacket(WildDigimon digimon) : base((ushort)PACKET_ID.MAP_FIELD_DIGIMON_UPDATE)
         {
-            SpawnSerial = digimon.Serial;
+            SpawnSerial = digimon.Serial.Data;
             DigimonID = digimon.Leader.DigimonID;
             Name = digimon.Leader.Name;
             Level = digimon.Leader.Level;
@@ -28,6 +28,9 @@ namespace DRPGServer.Network.Packets.Map.Battle
             PositionX = digimon.PositionX;
             PositionY = digimon.PositionY;
             FacingDirection = digimon.FacingDirection;
+            State = digimon.IsBusy ? (byte)11 :
+                    digimon.IsDead ? (byte)6 :
+                    (byte)1;
         }
         
         protected override void Serialize()
@@ -38,7 +41,7 @@ namespace DRPGServer.Network.Packets.Map.Battle
             WriteUShort(Unk1); // Evolution Type?
             WriteUShort(Level); // Level
             WriteByte(Classification); // Name Icon (D) (B*) (V**) (E***) (L****) (Golden Crown) (Platinum Crown)
-            WriteByte(State); // State byte (1 Spawn, 8 = Death, 11 = In-battle)
+            WriteByte(State); // State byte (1 Spawn, 6/8 = Death, 11 = In-battle)
             WriteUShort(FacingDirection);
             WriteShort(PositionX); //PositionX
             WriteShort(PositionY); //PositionY

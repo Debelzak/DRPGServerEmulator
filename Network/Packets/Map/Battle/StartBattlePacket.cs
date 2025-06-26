@@ -3,14 +3,15 @@
 0x00, 0x00,  */ 
 
 using DRPGServer.Network.Enum.Map;
+using DRPGServer.Game;
 
-namespace DRPGServer.Network.Packets.Map.Battle
+namespace DRPGServer.Network.Packets.Map
 {
-    public class StartBattlePacket() : OutPacket((ushort)PACKET_ID.MAP_BATTLE_START_RES)
+    public class StartBattlePacket(Game.Battle battle) : OutPacket((ushort)PACKET_ID.MAP_BATTLE_START_RES)
     {
         protected override void Serialize()
         {
-            WriteBytes([0xA9, 0xD4, 0x61, 0xD2, 0x52, 0x04, 0x4C, 0x46, 0xBF, 0xF6, 0x61, 0xAA, 0x83, 0xE0, 0x41, 0xF0]); // Serial. Battle Serial Identifier???
+            WriteBytes(battle.Serial.Data); // Serial. Battle Serial Identifier???
             WriteByte(1);
             WriteByte(2);
             WriteUShort(0);

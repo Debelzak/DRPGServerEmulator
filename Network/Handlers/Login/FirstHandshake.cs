@@ -1,8 +1,6 @@
 using DRPGServer.Network.Enum;
-using DRPGServer.Network.Packets.Login;
 using DRPGServer.Network.Packets;
 using DRPGServer.Network.Enum.Login;
-using DRPGServer.Game.Entities;
 
 namespace DRPGServer.Network.Handlers.Login
 {

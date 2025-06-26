@@ -1,6 +1,6 @@
 using DRPGServer.Network.Enum.Map;
 
-namespace DRPGServer.Network.Packets.Map.Character
+namespace DRPGServer.Network.Packets.Map
 {
     public class InventoryDataPacket() : OutPacket((ushort)PACKET_ID.MAP_INVENTORY_DATA)
     {

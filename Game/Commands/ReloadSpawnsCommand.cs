@@ -1,7 +1,6 @@
 using DRPGServer.Game.Entities;
 using DRPGServer.Game.Enum;
 using DRPGServer.Network;
-using DRPGServer.Network.Packets.Map.Character;
 
 namespace DRPGServer.Game.Commands
 {

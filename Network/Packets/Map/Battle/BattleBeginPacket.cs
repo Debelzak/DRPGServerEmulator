@@ -1,8 +1,8 @@
 using DRPGServer.Network.Enum.Map;
 
-namespace DRPGServer.Network.Packets.Map.Battle
+namespace DRPGServer.Network.Packets.Map
 {
-    public class BeginBattlePacket() : OutPacket((ushort)PACKET_ID.MAP_BATTLE_BEGIN)
+    public class BattleBeginPacket() : OutPacket((ushort)PACKET_ID.MAP_BATTLE_BEGIN)
     {
         protected override void Serialize()
         {

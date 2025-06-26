@@ -24,8 +24,7 @@ namespace DRPGServer.Game.Data.Managers
                 var digimonId = ushort.Parse(spawn.Attribute("DigimonID")?.Value ?? "0");
                 if (digimonId == 0) continue;
 
-                DigimonDataManager.DigimonTable.TryGetValue(digimonId, out var digimon);
-                if (digimon == null)
+                if (!DigimonDataManager.DigimonTable.TryGetValue(digimonId, out var digimon))
                 {
                     throw new Exception($"[SpawnDataManager] Digimon ID [{digimonId}] was not found in DigimonData");
                 }
@@ -46,8 +45,7 @@ namespace DRPGServer.Game.Data.Managers
                 foreach (var partner in partners)
                 {
                     var partnerDigimonId = ushort.Parse(partner.Attribute("DigimonID")?.Value ?? "0");
-                    DigimonDataManager.DigimonTable.TryGetValue(partnerDigimonId, out var partnerDigimon);
-                    if (partnerDigimon == null)
+                    if (!DigimonDataManager.DigimonTable.TryGetValue(partnerDigimonId, out var partnerDigimon))
                     {
                         throw new Exception($"[SpawnDataManager] Partner Digimon ID [{partnerDigimonId}] was not found in DigimonData");
                     }

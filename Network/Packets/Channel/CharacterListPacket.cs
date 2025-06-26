@@ -39,9 +39,9 @@ namespace DRPGServer.Network.Packets.Channel
                 0x00, 0x00, 0x00, 0x00, // ??
                 0x00, 0x00, 0x00, 0x00, // ??
             ]);
-            WriteUShort(character.DigimonID);
-            WriteUShort(character.DigimonLevel);
-            WriteString(character.DigimonNickname, 24);
+            WriteUShort(character.MainDigimon.DigimonID);
+            WriteUShort(character.MainDigimon.Level);
+            WriteString(character.MainDigimon.Name, 24);
             WriteInt(character.TotalBattles);
             WriteInt(character.TotalWins);
             WriteByte(slot);

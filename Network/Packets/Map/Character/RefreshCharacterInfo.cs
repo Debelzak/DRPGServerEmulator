@@ -1,6 +1,6 @@
 using DRPGServer.Network.Enum.Map;
 
-namespace DRPGServer.Network.Packets.Map.Character
+namespace DRPGServer.Network.Packets.Map
 {
     class RefreshCharacterInfoPacket() : OutPacket((ushort)PACKET_ID.MAP_REFRESH_CHARACTER_INFO)
     {

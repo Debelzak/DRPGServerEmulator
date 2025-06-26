@@ -10,6 +10,9 @@ namespace DRPGServer.Game.Commands
         {
             Register(new TeleportCommand());
             Register(new ReloadSpawnsCommand());
+            Register(new KillEnemiesCommand());
+            Register(new LevelUpCommand());
+            Register(new HealCommand());            
         }
 
         public static void Register(ICommand command)

@@ -33,7 +33,6 @@ namespace DRPGServer.Network
             AutoRegisterHandlers();
 
             Socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-            Socket.NoDelay = true;
             Socket.Bind(new IPEndPoint(IP, port));
             Socket.Listen(backlog: 100);
         }
@@ -85,6 +84,7 @@ namespace DRPGServer.Network
             while (true)
             {
                 var socket = await Socket.AcceptAsync();
+                
                 var client = new Client(socket, serverType);
                 
                 OnClientConnected(client);

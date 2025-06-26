@@ -10,7 +10,7 @@ namespace DRPGServer.Game.Entities
         public IReadOnlyList<Character> Characters => _characters;
         public byte AuthorityLevel { get; set; } = (byte)AUTHORITY_ID.NONE;
 
-        private readonly Character[] _characters = [new Character(), new Character(), new Character(), new Character()];
+        private readonly Character[] _characters = [new Character(Digimon.Empty), new Character(Digimon.Empty), new Character(Digimon.Empty), new Character(Digimon.Empty)];
 
         public void SetCharacterSlot(byte slot, Character character)
         {

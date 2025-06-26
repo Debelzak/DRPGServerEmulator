@@ -1,3 +1,5 @@
+using DRPGServer.Common;
+
 namespace DRPGServer.Game.Entities
 {
     public class DigimonSpawn(ushort digimonId)
@@ -10,7 +12,7 @@ namespace DRPGServer.Game.Entities
             public ushort Count { get; set; }
         }
 
-        public byte[] Serial { get; private set; } = new byte[16];
+        public Serial Serial { get; private set; } = new();
         public byte MapID { get; set; }
         public ushort DigimonID { get; set; } = digimonId;
         public ushort Level { get; set; }

@@ -1,9 +1,7 @@
-using DRPGServer.Game.Enum;
 using DRPGServer.Network.Enum;
 using DRPGServer.Network.Enum.Map;
 using DRPGServer.Network.Packets;
 using DRPGServer.Network.Packets.Map;
-using DRPGServer.Network.Packets.Map.Character;
 
 namespace DRPGServer.Network.Handlers.Map
 {
@@ -13,13 +11,8 @@ namespace DRPGServer.Network.Handlers.Map
         public SERVER_TYPE ServerType => SERVER_TYPE.MAP_SERVER;
         public void Process(InPacket packet, Client client)
         {
-            var user = client.User;
-            if (user is null) {
-                client.Dispose(); return;
-            }
-
-            var connectedCharacter = client.Player?.Character;
-            if (connectedCharacter is null) {
+            var player = client.Player;
+            if (player == null) {
                 client.Dispose(); return;
             }
 
@@ -28,14 +21,14 @@ namespace DRPGServer.Network.Handlers.Map
 
             var data = new RefreshCharacterInfoPacket
             {
-                CharacterKey = Utils.GenerateRandomSessionId(false),
-                Nickname = connectedCharacter.Nickname,
-                TamerID = connectedCharacter.TamerID,
-                PositionX = connectedCharacter.PositionX,
-                PositionY = connectedCharacter.PositionY,
-                DigimonKey = Utils.GenerateRandomSessionId(true),
-                DigimonID = connectedCharacter.DigimonID,
-                DigimonNickname = connectedCharacter.DigimonNickname,
+                CharacterKey = player.Character.Serial.Data,
+                Nickname = player.Character.Nickname,
+                TamerID = player.Character.TamerID,
+                PositionX = player.Character.PositionX,
+                PositionY = player.Character.PositionY,
+                DigimonKey = player.Character.MainDigimon.Serial.Data,
+                DigimonID = player.Character.MainDigimon.DigimonID,
+                DigimonNickname = player.Character.MainDigimon.Name,
             };
             
             client.Send(data);
