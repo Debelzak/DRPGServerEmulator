@@ -31,11 +31,10 @@ namespace DRPGServer.Game.Data.Managers
                 {
                     DigimonID = digimonId,
                     Name = digimon.Attribute("Name")?.Value ?? string.Empty,
-                    BaseHP = int.Parse(digimon.Attribute("BaseHP")?.Value ?? "0"),
-                    BaseVP = int.Parse(digimon.Attribute("BaseVP")?.Value ?? "0"),
-                    BaseATK = int.Parse(digimon.Attribute("BaseATK")?.Value ?? "0"),
-                    BaseDEF = int.Parse(digimon.Attribute("BaseDEF")?.Value ?? "0"),
-                    BaseBR = int.Parse(digimon.Attribute("BaseBR")?.Value ?? "0"),
+                    BaseSTR = int.Parse(digimon.Attribute("BaseSTR")?.Value ?? "0"),
+                    BaseAGI = int.Parse(digimon.Attribute("BaseAGI")?.Value ?? "0"),
+                    BaseCON = int.Parse(digimon.Attribute("BaseCON")?.Value ?? "0"),
+                    BaseINT = int.Parse(digimon.Attribute("BaseINT")?.Value ?? "0"),
                     ActionGauge = int.Parse(digimon.Attribute("ActionGauge")?.Value ?? "0"),
                     Classification = byte.Parse(digimon.Attribute("Classification")?.Value ?? "0"),
                 };

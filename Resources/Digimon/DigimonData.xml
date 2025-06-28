@@ -1,7 +1,653 @@
 <DigimonData>
+    <Digimon ID="10" Name="Gigimon" BaseSTR="3" BaseAGI="2" BaseCON="2" BaseINT="1" ActionGauge="500" Classification="2" />
+    <Digimon ID="11" Name="Pokomon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="12" Name="Gummymon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="13" Name="Tokomon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="14" Name="Yuramon" BaseSTR="2" BaseAGI="2" BaseCON="2" BaseINT="2" ActionGauge="500" Classification="2" />
+    <Digimon ID="15" Name="Pagumon(Ore-type)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="16" Name="Nyaromon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="17" Name="Zurumon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="18" Name="Choromon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="19" Name="Mochimon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="20" Name="Tunomon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="21" Name="Koromon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="22" Name="Pyocomon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="23" Name="Pukamon(Beast-type)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="24" Name="Chibimon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="25" Name="Poromon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="26" Name="Upamon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="27" Name="Yarmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="28" Name="Chocomon(Vice)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="29" Name="Chocomon(Virtue)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="30" Name="Chibimon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="31" Name="Hopmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="32" Name="Caprimon(Knight-type)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="33" Name="Peti Meramon(Wizard-type)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="34" Name="Gigimon(Crimson)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="35" Name="Minomon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="36" Name="Paomon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="37" Name="Pagumon(Oni-type)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="38" Name="Caprimon(Warrior-type)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="39" Name="Kuramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="40" Name="Dorimon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="41" Name="Zurumon(Aquatic-type)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="43" Name="Pukamon(Aquatic-type)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="44" Name="Tanemon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="45" Name="Babydmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="46" Name="Puroromon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="47" Name="Pagumon(Satan-type)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="48" Name="Mochimon(Insect-type)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="49" Name="Peti Meramon(Meteorite-type)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="50" Name="Pagumon(Demon-type)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="51" Name="Guilmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="52" Name="Renamon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="53" Name="Terriermon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="54" Name="Patamon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="55" Name="Gottsumon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="56" Name="Palmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="57" Name="Pico Devimon(Satan-type)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="58" Name="Raremon(Rookie)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="59" Name="Mushmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="61" Name="Goburimon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="62" Name="Impmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="63" Name="Piyomon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="64" Name="Agumon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="65" Name="Plotmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="66" Name="Betamon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="67" Name="V-mon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="68" Name="Tentomon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="69" Name="Gomamon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="70" Name="Floramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="71" Name="Hagurumon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="72" Name="Penmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="73" Name="Kunemon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="74" Name="Gabumon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="75" Name="Elecmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="76" Name="Hawkmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="77" Name="Armadimon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="78" Name="Lopmon(Vice)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="79" Name="Lopmon(Virtue)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="80" Name="V-mon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="81" Name="Monodramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="82" Name="Kotemon(Knight-type)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="83" Name="Candmon(Wizard-type)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="84" Name="Guilmon(Crimson)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="85" Name="Wormmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="86" Name="Labramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="87" Name="Kotemon(Warrior-type)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="88" Name="Agumon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="89" Name="Gabumon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="90" Name="Keramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="91" Name="Growmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="92" Name="Kyubimon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="93" Name="Galgomon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="94" Name="DORUgamon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="95" Name="Allomon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="96" Name="Fugamon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="97" Name="Flybeemon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="98" Name="Togemon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="99" Name="Evilmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="100" Name="Raremon(Champion)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="101" Name="Guardromon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="102" Name="Devimon(Impmon Line)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="103" Name="Ice Devimon(Vamdemon Line)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="104" Name="Woodmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="105" Name="Garurumon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="106" Name="Leomon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="107" Name="Seadramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="108" Name="XV-mon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="109" Name="Scumon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="110" Name="Icemon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="111" Name="Thunderballmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="112" Name="Greymon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="113" Name="Angemon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="114" Name="Tailmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="115" Name="Kabuterimon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="116" Name="Birdramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="117" Name="Ikkakumon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="118" Name="Gekomon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="119" Name="Wizarmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="120" Name="Kiwimon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="121" Name="Aquilamon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="122" Name="Ankylomon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="123" Name="Wendimon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="124" Name="Prairiemon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="125" Name="XV-mon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="126" Name="Strikedramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="127" Name="Dinohumon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="128" Name="Growmon(Crimson)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="129" Name="Nefertimon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="130" Name="Tyranomon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="131" Name="Megalo Growmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="132" Name="Taomon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="133" Name="Rapidmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="134" Name="DORUguremon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="135" Name="Knightmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="136" Name="Insekimon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="137" Name="Raremon(Ult)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="138" Name="Monzaemon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="139" Name="Andromon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="140" Name="Volcamon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="141" Name="Panjyamon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="142" Name="Mega Seadramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="143" Name="Metal Greymon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="144" Name="Were Garurumon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="145" Name="Holy Angemon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="146" Name="Angewomon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="147" Name="Atlur Kabuterimon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="148" Name="Garudamon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="149" Name="Zudomon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="150" Name="Lilimon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="151" Name="Jyureimon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="152" Name="Waru Monzaemon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="153" Name="Paildramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="154" Name="Vamdemon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="155" Name="Fantomon(Candmon Line)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="156" Name="Gerbemon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="157" Name="Megadramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="158" Name="Gigadramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="159" Name="Silphymon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="160" Name="Shakkoumon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="161" Name="Skull Satamon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="162" Name="Andiramon(Vice)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="163" Name="Andiramon(Virtue)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="164" Name="Caturamon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="165" Name="Mihiramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="166" Name="Cyberdramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="167" Name="Paildramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="168" Name="Megalo Growmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="169" Name="Indaramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="170" Name="Vikaralamon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="171" Name="Dukemon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="172" Name="Sakuyamon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="173" Name="Saint Galgomon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="174" Name="War Greymon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="175" Name="Metal Garurumon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="176" Name="Imperialdramon : Fighter Mode" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="177" Name="Venom Vamdemon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="178" Name="Pinochimon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="179" Name="Mugendramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="180" Name="Metal Seadramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="181" Name="Piemon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="183" Name="Ofanimon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="184" Name="Seraphimon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="185" Name="Saber Leomon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="186" Name="Black War Greymon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="187" Name="Rosemon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="188" Name="Omegamon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="189" Name="Kumbhiramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="190" Name="Pajiramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="191" Name="Makuramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="192" Name="Beelzebumon(Vice)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="193" Name="Beelzebumon : Blast Mode" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="194" Name="Hououmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="195" Name="Beelzebumon(Virtue)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="196" Name="Cherubimon(Virtue)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="197" Name="Cherubimon(Vice)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="198" Name="Imperialdramon : Paladin Mode" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="199" Name="Justimon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="200" Name="Lord Knightmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="201" Name="Dynasmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="202" Name="Herakle Kabuterimon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="203" Name="Dukemon : Crimson Mode" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="204" Name="Xuanwumon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="205" Name="Zhuqiaomon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="206" Name="Qinglongmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="207" Name="Baihumon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="208" Name="Gran Kuwagamon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="209" Name="Valkyrimon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="210" Name="Metal Etemon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="211" Name="Anubimon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="212" Name="Zanbamon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="213" Name="Omegamon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="214" Name="Omegamon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="215" Name="Diablomon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="216" Name="Megidramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="217" Name="Black Seraphimon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="219" Name="Kuzuhamon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="221" Name="DORUgoramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="222" Name="Raremon(Mega)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="223" Name="Hi Andromon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="224" Name="Vikemon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="225" Name="Alphamon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="226" Name="Alphamon : Ouryuken" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="227" Name="Pharaohmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="228" Name="Dinotigermon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="230" Name="Death-X-DORUgoramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="231" Name="Black Saint Galgomon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="232" Name="Fujinmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="233" Name="Raijinmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="234" Name="Pile Volcamon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="235" Name="Ancient Volcamon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="236" Name="Grandis Kuwagamon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="237" Name="EBEmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="238" Name="Imperialdramon : Dragon Mode" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="239" Name="Shine Greymon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="240" Name="Breakdramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="241" Name="Slayerdramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="242" Name="Tiger Vespamon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="243" Name="Victory Greymon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="244" Name="Z'd Garurumon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="245" Name="Boltmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="246" Name="Parasimon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="247" Name="King Etemon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="248" Name="Chaos Dukemon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="249" Name="Belial Vamdemon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="250" Name="Demon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="251" Name="Holydramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="252" Name="Giga Seadramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="253" Name="Ouryumon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="254" Name="Omegamon X" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="255" Name="Omegamon X" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="256" Name="Demon Beast Mode" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="257" Name="Minervamon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="258" Name="Skull Mammon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="259" Name="Black War Greymon X" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="260" Name="Plesiomon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="261" Name="Tyrant Kabuterimon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="262" Name="Chaosdramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="263" Name="Chaos Piemon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="264" Name="Omegamon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="266" Name="Metal Garurumon X" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="267" Name="Shine Greymon : Burst Mode" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="268" Name="Mirage Gaogamon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="269" Name="Rosemon(Lalamon Line)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="270" Name="Mirage Gaogamon : Burst Mode" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="271" Name="Rosemon : Burst Mode" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="272" Name="Ravmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="273" Name="Ravmon : Burst Mode" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="274" Name="Mervamon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="275" Name="Death-X-mon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="278" Name="Bancho Leomon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="279" Name="Examon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="280" Name="Lilithmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="281" Name="Armagemon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="282" Name="Huanglongmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="283" Name="Lucemon : Falldown Mode" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="284" Name="Lucemon : Satan Mode" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="285" Name="Lucemon : Larva Mode" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="286" Name="Apocalymon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="287" Name="Craniummon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="288" Name="Barbamon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="289" Name="Leviamon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="290" Name="Grand Dracumon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="291" Name="Belphemon : Sleep Mode" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="292" Name="Belphemon : Rage Mode" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="293" Name="Raremon(Mega/Xuanwumon)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="294" Name="Raremon(Mega/Zhuqiaomon)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="295" Name="Raremon(Mega/Qinglongmon)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="296" Name="Raremon(Mega/Baihumon)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="297" Name="Omegamon Zwart" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="298" Name="Metal Garurumon(Black)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="299" Name="War Greymon X" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="300" Name="Magnamon(Mega)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="301" Name="Imperialdramon : Dragon Mode(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="302" Name="Ulforce V-dramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="303" Name="Imperialdramon : Fighter Mode(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="304" Name="Death-X-DORUgoramon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="305" Name="DORUgoramon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="306" Name="Dukemon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="307" Name="Megidramon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="308" Name="Chaos Dukemon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="309" Name="Dukemon X" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="310" Name="Pukumon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="311" Name="Neptunemon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="312" Name="Jumbo Gamemon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="317" Name="Magnamon X" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="318" Name="Duftmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="319" Name="Duftmon X" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="320" Name="Marsmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="323" Name="Omegamon Zwart D(Defeat)Ⅲ" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="324" Name="Blitz Greymon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="325" Name="Cres Garurumon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="326" Name="Omegamon Alter-S" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="327" Name="Millenniumon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="328" Name="Ulforce V-dramon X" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="329" Name="Omegamon Alter-B" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="330" Name="Beelzebumon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="331" Name="Moon Millenniumon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="332" Name="Zeed Millenniumon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="334" Name="Dynasmon X" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="335" Name="Mastemon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="336" Name="Sleipmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="337" Name="Mirage Gaogamon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="338" Name="Sleipmon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="339" Name="Murmukusmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="340" Name="Murmukusmon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="341" Name="Gulfmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="342" Name="Gulfmon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="343" Name="Justimon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="344" Name="Demon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="345" Name="Demon Beast Mode(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="346" Name="Craniummon X" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="347" Name="Sleipmon X" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="348" Name="Barbamon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="349" Name="Lucemon : Falldown Mode(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="350" Name="Lucemon : Larva Mode(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="351" Name="Beelzebumon X" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="352" Name="Voltobautamon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="353" Name="Rosemon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="354" Name="Ravmon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="355" Name="Shine Greymon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="356" Name="Sakuyamon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="357" Name="Saint Galgomon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="358" Name="JESmon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="359" Name="JESmon X" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="360" Name="Megidramon X" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="361" Name="Lotusmon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="362" Name="Rafflesimon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="364" Name="Rosemon X" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="365" Name="Darkdramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="366" Name="Gaioumon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="367" Name="Lord Knightmon X" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="368" Name="Chaosmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="369" Name="Chaosdramon X" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="370" Name="Rust Tyranomon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="371" Name="Aegisdramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="372" Name="Minervamon X-Antibody" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="373" Name="Raguelmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="374" Name="Ofanimon : Falldown Mode" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="375" Name="Ordinemon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="376" Name="Medieval Dukemon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="377" Name="Examon X-Antibody" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="378" Name="Lilithmon X-Antibody" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="379" Name="Barbamon X-Antibody" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="380" Name="Gankoomon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="381" Name="Gankoomon X" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="382" Name="Valdurmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="383" Name="Kaiser Greymon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="384" Name="Magna Garurumon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="385" Name="Susanoomon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="386" Name="Jet Mervamon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="388" Name="Demon X" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="389" Name="Slash Angemon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="390" Name="Ancient Troiamon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="391" Name="Ornismon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="392" Name="Beelzebumon(C)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="393" Name="Xros Up Mervamon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="394" Name="Beelzebumon(C)(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="395" Name="Mercurymon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="396" Name="Agumon Bond of Bravery" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="397" Name="Bancho Leomon : Burst Mode" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="398" Name="Zeke Greymon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="399" Name="Shoutmon X7" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="400" Name="Gabumon Bond of Friendship" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="402" Name="Ogudomon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="437" Name="Omegamon: Merciful Mode" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="500" Name="Gigasmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="501" Name="Grottemon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="502" Name="Calamaramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="503" Name="Ranamon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="504" Name="Lowemon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="505" Name="Kaiser Leomon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="506" Name="Agnimon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="508" Name="Arbormon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="509" Name="Petaldramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="510" Name="Mercuremon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="511" Name="Sephirothmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="512" Name="Vritramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="513" Name="Wolfmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="514" Name="Grammon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="600" Name="Fladramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="601" Name="Pegasmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="602" Name="Digmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="603" Name="Holsmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="604" Name="Kongoumon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="605" Name="Yaksamon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="606" Name="Pipismon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="607" Name="DORUmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="608" Name="Tocanmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="609" Name="Fladramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="611" Name="Lighdramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="612" Name="Sepikmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="613" Name="Rinkmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="614" Name="Shurimon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="615" Name="Yaksamon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="616" Name="Lighdramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="617" Name="Gargomon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="618" Name="Gargomon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="619" Name="Bearmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="621" Name="Agumon S" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="622" Name="Dracomon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="623" Name="Funbeemon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="624" Name="Dokunemon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="625" Name="Candmon(Meteorite-type)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="626" Name="Pico Devimon(Demon-type)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="627" Name="Ryudamon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="628" Name="Bakumon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="629" Name="Gaomon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="630" Name="Lalamon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="631" Name="Falcomon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="632" Name="Lucemon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="633" Name="Dracumon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="634" Name="Magnamon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="635" Name="V-mon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="636" Name="DORUmon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="637" Name="Guilmon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="638" Name="Shakomon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="639" Name="Kamemon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="640" Name="Swimmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="641" Name="Otamamon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="642" Name="Submarimon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="643" Name="Agumon(Black)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="644" Name="Gazimon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="645" Name="Agumon X" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="646" Name="Impmon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="647" Name="Guilmon X" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="648" Name="Kudamon S" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="649" Name="Gaomon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="650" Name="Kudamon S(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="651" Name="Monodramon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="652" Name="Lucemon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="653" Name="Gabumon X" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="654" Name="Lalamon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="655" Name="Falcomon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="656" Name="Agumon S(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="657" Name="Renamon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="658" Name="Terriermon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="659" Name="Hackmon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="660" Name="Palmon X" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="661" Name="Commandramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="662" Name="Gabumon(Black)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="663" Name="Sparrowmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="666" Name="Shoutmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="667" Name="Ballistamon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="668" Name="Dorulumon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="669" Name="Starmons" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="670" Name="Mailbirdramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="671" Name="Ukkomon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="672" Name="SkullKnightmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="673" Name="DeadlyAxemon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="675" Name="Bagramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="677" Name="Morphomon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="700" Name="Goatmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="702" Name="Stingmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="703" Name="Siesamon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="704" Name="Musyamon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="705" Name="Greymon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="706" Name="Garurumon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="707" Name="Chrysalimon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="711" Name="Bitmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="712" Name="Geo Greymon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="714" Name="Starmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="715" Name="Gryzmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="716" Name="Death-X-DORUgamon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="718" Name="Dark Tyranomon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="719" Name="Coredramon(Green)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="720" Name="Coredramon(Blue)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="721" Name="Mechanorimon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="722" Name="Waspmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="723" Name="Bakemon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="724" Name="Soulmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="725" Name="Dokugumon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="726" Name="Devimon(Vamdemon Line)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="727" Name="Ginryumon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="728" Name="Boarmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="729" Name="Gaogamon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="730" Name="Sunflowmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="731" Name="Peckmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="732" Name="Lucemon(Champion)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="733" Name="Sangloupmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="734" Name="V-dramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="735" Name="XV-mon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="736" Name="Raptordramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="737" Name="Death-X-DORUgamon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="738" Name="DORUgamon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="739" Name="Growmon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="740" Name="Gesomon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="741" Name="Whamon(Champion)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="742" Name="Tylomon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="743" Name="Gawappamon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="744" Name="Greymon(Blue)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="746" Name="Deltamon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="747" Name="Kuwagamon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="748" Name="Greymon X" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="749" Name="Devimon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="750" Name="Growmon X" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="751" Name="Reppamon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="752" Name="Black Tailmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="753" Name="Gaogamon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="754" Name="Reppamon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="755" Name="Ice Devimon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="756" Name="Ice Devimon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="757" Name="Devidramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="758" Name="Devidramon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="759" Name="Strikedramon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="760" Name="Lucemon(Champion)(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="761" Name="Garurumon X" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="763" Name="Sunflowmon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="764" Name="Peckmon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="765" Name="Geo Greymon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="766" Name="Kyubimon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="767" Name="Galgomon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="768" Name="Bao Hackmon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="769" Name="Togemon X" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="770" Name="Sealsdramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="771" Name="Meicoomon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="772" Name="Garurumon(Black)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="773" Name="Meramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="776" Name="Shoutmon X2" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="777" Name="Shoutmon X3" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="778" Name="Shoutmon X4" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="779" Name="DarkKnightmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="780" Name="Snimon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="782" Name="Omega Shoutmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="783" Name="Greymon(C)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="784" Name="Shellmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="785" Name="Ogremon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="786" Name="Unimon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="788" Name="RedVegimon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="790" Name="Eosmon_LV4" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="800" Name="Sandiramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="801" Name="Sinduramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="802" Name="Majiramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="803" Name="Vajramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="804" Name="Jewelbeemon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="805" Name="Etemon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="806" Name="Cerberumon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="807" Name="Asuramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="808" Name="Metal Greymon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="809" Name="Were Garurumon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="810" Name="Infermon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="811" Name="Metal Tyranomon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="812" Name="Rapidmon Armor" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="813" Name="Groundramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="814" Name="Wingdramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="815" Name="Cannonbeemon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="817" Name="Mummymon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="819" Name="Grappu Leomon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="820" Name="Death-X-DORUguremon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="821" Name="Master Tyranomon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="824" Name="Rize Greymon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="825" Name="Blue Meramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="826" Name="Fantomon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="827" Name="Archnemon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="828" Name="Hisyaryumon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="829" Name="Superstarmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="830" Name="Dark Superstarmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="831" Name="Mammon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="832" Name="Mach Gaogamon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="833" Name="Lilamon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="834" Name="Yatagaramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="835" Name="Lucemon : Falldown Mode(Ult)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="836" Name="Matadrmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="837" Name="Astamon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="838" Name="Skull Greymon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="839" Name="Aero V-dramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="840" Name="Paildramon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="841" Name="Death-X-DORUguremon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="842" Name="DORUguremon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="843" Name="Grademon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="844" Name="Megalo Growmon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="845" Name="Marin Devimon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="846" Name="Whamon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="847" Name="Tonosama Gekomon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="848" Name="Shawujinmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="849" Name="Metal Greymon(Virus)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="850" Name="Nanomon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="851" Name="Chimairamon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="853" Name="Metal Greymon X" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="854" Name="Skull Satamon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="855" Name="Megalo Growmon X" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="857" Name="Lady Devimon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="858" Name="Tyilinmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="859" Name="Mach Gaogamon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="860" Name="Tyilinmon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="861" Name="Mephismon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="862" Name="Mephismon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="863" Name="Cyberdramon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="864" Name="Lucemon : Falldown Mode(Ult)(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="865" Name="Were Garurumon X" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="866" Name="Lilamon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="867" Name="Yatagaramon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="868" Name="Rize Greymon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="869" Name="Taomon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="870" Name="Rapidmon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="871" Name="Savior Hackmonn(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="872" Name="Rapidmon Armor(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="873" Name="Lilimon X" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="874" Name="Tankdramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="875" Name="Meicrackmon Vicious Mode" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="876" Name="Were Garurumon(Black)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="877" Name="Death Meramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="880" Name="Baalmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="881" Name="Baalmon(Tamed)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="882" Name="Shoutmon X5" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="883" Name="MetalGreymon(C)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="884" Name="ShoutmonDX" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="885" Name="NeoDevimon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="887" Name="Super Darknightmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="888" Name="Deramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="889" Name="Blossomon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="891" Name="Eosmon_LV5" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="920" Name="NeoVamdemon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="922" Name="Kuzuhamon Miko Mode" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="923" Name="DarknessBagramon(Darknightmon)" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="924" Name="DarknessBagramon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="925" Name="Shoutmon X7: Superior Mode" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="926" Name="Griphonmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="927" Name="NeoVamdemon Darkness Mode One" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="928" Name="NeoMyotismon Darkness Mode Two" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="929" Name="Bloomlordmon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="930" Name="ClavisAngemon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="932" Name="Eosmon_LV6" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="1001" Name="Omegamon Alter-B" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="1002" Name="Rust Tyranomon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="1003" Name="Zeed Millenniumon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="1004" Name="Omegamon Zwart D" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="1005" Name="Mastemon" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="1006" Name="Duftmon X" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="1007" Name="Minervamon X-Antibody" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="1008" Name="Dynasmon X" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="1009" Name="Magnamon X" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+    <Digimon ID="1010" Name="Omegamon X" BaseSTR="0" BaseAGI="0" BaseCON="0" BaseINT="0" ActionGauge="500" Classification="2" />
+</DigimonData>
+
+
+ <!--DigimonData>
     <Digimon ID="10" Name="Gigimon" BaseHP="115" BaseVP="115" BaseATK="145" BaseDEF="87" BaseBR="131" ActionGauge="500" Classification="2"/>
     <Digimon ID="14" Name="Yuramon" BaseHP="96" BaseVP="50" BaseATK="60" BaseDEF="43" BaseBR="65" ActionGauge="500" Classification="2"/>
-    <Digimon ID="17" Name="Pyocomon" BaseHP="116" BaseVP="50" BaseATK="80" BaseDEF="63" BaseBR="85" ActionGauge="500" Classification="2"/> <!--lv1 10 0 10 0 -->
-    <Digimon ID="46" Name="Puroromon" BaseHP="136" BaseVP="125" BaseATK="98" BaseDEF="72" BaseBR="100" ActionGauge="500" Classification="2"/> <!--lv4 12 0 14 0 -->
-    <Digimon ID="44" Name="Tanemon" BaseHP="155" BaseVP="200" BaseATK="116" BaseDEF="81" BaseBR="115" ActionGauge="500" Classification="2"/> <!--lv7 13 0 20 0 -->
-</DigimonData>
+    <Digimon ID="17" Name="Pyocomon" BaseHP="116" BaseVP="50" BaseATK="80" BaseDEF="63" BaseBR="85" ActionGauge="500" Classification="2"/> < lv1 10 0 10 0 >
+    <Digimon ID="46" Name="Puroromon" BaseHP="136" BaseVP="125" BaseATK="98" BaseDEF="72" BaseBR="100" ActionGauge="500" Classification="2"/> < lv4 12 0 14 0 >
+    <Digimon ID="44" Name="Tanemon" BaseHP="155" BaseVP="200" BaseATK="116" BaseDEF="81" BaseBR="115" ActionGauge="500" Classification="2"/> < lv7 13 0 20 0 >
+</DigimonData-->

@@ -6,12 +6,12 @@
     <Digimon Level="5" TargetEXP="248"/>
     <Digimon Level="6" TargetEXP="358"/>
     <Digimon Level="7" TargetEXP="501"/>
-    <Digimon Level="8" TargetEXP="687"/> <!---->
-    <Digimon Level="9" TargetEXP="915"/>
-    <Digimon Level="10" TargetEXP="1196"/>
-    <Digimon Level="11" TargetEXP="1533"/>
-    <Digimon Level="12" TargetEXP="1934"/>
-    <Digimon Level="13" TargetEXP="2403"/>
+    <Digimon Level="8" TargetEXP="687"/>
+    <Digimon Level="9" TargetEXP="928"/>
+    <Digimon Level="10" TargetEXP="1238"/>
+    <Digimon Level="11" TargetEXP="1634"/>
+    <Digimon Level="12" TargetEXP="2139"/>
+    <Digimon Level="13" TargetEXP="2781"/> <!---->
     <Digimon Level="14" TargetEXP="2947"/>
     <Digimon Level="15" TargetEXP="3571"/>
     <Digimon Level="16" TargetEXP="4282"/>

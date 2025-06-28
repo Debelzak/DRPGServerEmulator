@@ -15,20 +15,21 @@ class Utils
             throw new ArgumentOutOfRangeException(nameof(size), "Size must be greater than 0.");
 
         encoding ??= Encoding.UTF8;
-        int maxBytes = size; // agora pode usar todos os bytes
+        int maxBytes = size - 1; // deixa espaço para null byte
 
         Span<byte> buffer = stackalloc byte[512];
         int byteCount = encoding.GetBytes(text, buffer);
 
+        byte[] result = new byte[size]; // já vem zerado (null byte no fim garantido)
+
         if (byteCount <= maxBytes)
         {
-            byte[] result = new byte[size];
             buffer[..byteCount].CopyTo(result);
-            // Não colocar o zero no final
+            // último byte já é 0x00, não precisa mexer
             return result;
         }
 
-        // Busca binária
+        // Busca binária para encaixar dentro de maxBytes
         int left = 0, right = text.Length;
         int bestFit = 0;
 
@@ -48,11 +49,10 @@ class Utils
             }
         }
 
-        byte[] output = new byte[size];
-        encoding.GetBytes(text.AsSpan(0, bestFit), output.AsSpan());
-        // Não colocar zero no final
+        encoding.GetBytes(text.AsSpan(0, bestFit), result.AsSpan());
+        // Último byte continua como 0x00
 
-        return output;
+        return result;
     }
 
     public static string MD5(string input)

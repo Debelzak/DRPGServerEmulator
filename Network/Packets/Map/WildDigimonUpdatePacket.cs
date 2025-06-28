@@ -5,48 +5,23 @@ using DRPGServer.Network.Enum.Map;
 
 namespace DRPGServer.Network.Packets.Map
 {
-    public class WildDigimonUpdatePacket : OutPacket
+    public class WildDigimonUpdatePacket(WildDigimon digimon) : OutPacket((ushort)PACKET_ID.MAP_FIELD_DIGIMON_UPDATE)
     {
-        public byte[] SpawnSerial { get; set; } = new byte[16];
-        public ushort DigimonID { get; set; }
-        public ushort Unk1 { get; set; } = 1;
-        public string Name { get; set; } = string.Empty;
-        public ushort Level { get; set; }
-        public byte Classification { get; set; }
-        public short PositionX { get; set; }
-        public short PositionY { get; set; }
-        public byte State { get; private set; }
-        public ushort FacingDirection { get; set; }
-
-        public WildDigimonUpdatePacket(WildDigimon digimon) : base((ushort)PACKET_ID.MAP_FIELD_DIGIMON_UPDATE)
-        {
-            SpawnSerial = digimon.Serial.Data;
-            DigimonID = digimon.Leader.DigimonID;
-            Name = digimon.Leader.Name;
-            Level = digimon.Leader.Level;
-            Classification = 2;
-            PositionX = digimon.PositionX;
-            PositionY = digimon.PositionY;
-            FacingDirection = digimon.FacingDirection;
-            State = digimon.IsBusy ? (byte)11 :
-                    digimon.IsDead ? (byte)6 :
-                    (byte)1;
-        }
-        
         protected override void Serialize()
         {
-            WriteBytes(SpawnSerial); //Field Spawn Hash ?? (For battle is different)
-            WriteString(Name, 22); // name display
-            WriteUShort(DigimonID); // DigimonID
-            WriteUShort(Unk1); // Evolution Type?
-            WriteUShort(Level); // Level
-            WriteByte(Classification); // Name Icon (D) (B*) (V**) (E***) (L****) (Golden Crown) (Platinum Crown)
-            WriteByte(State); // State byte (1 Spawn, 6/8 = Death, 11 = In-battle)
-            WriteUShort(FacingDirection);
-            WriteShort(PositionX); //PositionX
-            WriteShort(PositionY); //PositionY
-            WriteShort(PositionX); // Something to do with movement. official seems like it is always equals to PositionX
-            WriteShort(PositionY); // Something to do with movement. official seems like it is always equals to PositionY
+            WriteBytes(digimon.Serial.Data); //Field Spawn Hash ?? (For battle is different)
+            WriteString(digimon.Digimons[0].Name, 21); // name display
+            WriteByte(0);
+            WriteUShort(digimon.DisplayDigimonID); // Display DigimonID
+            WriteUShort(1); // Evolution Type?
+            WriteUShort(digimon.Digimons[0].Level); // Level
+            WriteByte(digimon.Digimons[0].Classification); // Name Icon (D) (B*) (V**) (E***) (L****) (Golden Crown) (Platinum Crown)
+            WriteByte(digimon.IsBusy ? (byte)11 : digimon.IsDead ? (byte)6 : (byte)1); // State byte (1 Spawn, 6/8 = Death, 11 = In-battle)
+            WriteUShort(digimon.FacingDirection);
+            WriteShort(digimon.PositionX); //PositionX
+            WriteShort(digimon.PositionY); //PositionY
+            WriteShort(digimon.PositionX); // Something to do with movement. official seems like it is always equals to PositionX
+            WriteShort(digimon.PositionY); // Something to do with movement. official seems like it is always equals to PositionY
         }
     }
 }

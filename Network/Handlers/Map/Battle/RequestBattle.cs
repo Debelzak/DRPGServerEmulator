@@ -17,6 +17,7 @@ namespace DRPGServer.Network.Handlers.Map.Battle
             byte[] hash = packet.ReadBytes(16);
 
             var battle = player.Zone.RequestBattle(player, hash);
+            
             battle?.Start();
         }
     }

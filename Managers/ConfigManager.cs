@@ -61,6 +61,7 @@ namespace DRPGServer
         {
             Load();
             DigimonDataManager.Load();
+            ExpTableManager.Load();
             PortalDataManager.Load();
             SpawnDataManager.Load();
             ZoneManager.Load();

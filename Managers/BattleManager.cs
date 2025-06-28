@@ -10,7 +10,6 @@ namespace DRGPServer.Managers
 
         public static Battle? CreateBattle(Player participant, WildDigimon enemy)
         {
-            
             enemy.IsBusy = true;
             
             var battle = new Battle(participant, enemy);

@@ -127,7 +127,7 @@ namespace DRPGServer.Game
                 }
 
                 // Movement
-                var spawn = spawns.FirstOrDefault(d => d.DigimonID == wildDigimon.Leader.DigimonID);
+                var spawn = wildDigimon.Spawn;
                 if (spawn == null) continue;
 
                 if (dice.Next(0, 100) <= moveChance)
@@ -216,7 +216,7 @@ namespace DRPGServer.Game
             Serial serial = new(enemyRequestSerial);
             if (!wildDigimons.TryGetValue(serial.ToString(), out var enemy)) return null;
             if (enemy.IsBusy || enemy.IsDead) return null;
-
+            
             var battle = BattleManager.CreateBattle(participant, enemy);
             return battle;
         }

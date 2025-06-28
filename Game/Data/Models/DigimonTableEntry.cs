@@ -4,11 +4,10 @@ namespace DRPGServer.Game.Data.Models
     {
         public ushort DigimonID;
         public string Name;
-        public int BaseHP;
-        public int BaseVP;
-        public int BaseATK;
-        public int BaseDEF;
-        public int BaseBR;
+        public int BaseSTR;
+        public int BaseAGI;
+        public int BaseCON;
+        public int BaseINT;
         public int ActionGauge;
         public byte Classification;
     }

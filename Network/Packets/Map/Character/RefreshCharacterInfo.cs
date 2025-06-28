@@ -22,8 +22,8 @@ namespace DRPGServer.Network.Packets.Map
             WriteUShort((ushort)1); // ?
             WriteShort(PositionX); // PositionX
             WriteShort(PositionY); // PositionY
-            WriteUShort((ushort)0x003f);
-            WriteUShort((ushort)0x0058);
+            WriteShort(0x003f);
+            WriteShort(0x0058);
             WriteInt(0);
             WriteBytes(DigimonKey); // Another byte key
             WriteUShort(DigimonID); // DigimonID

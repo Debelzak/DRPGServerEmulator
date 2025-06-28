@@ -24,6 +24,7 @@ namespace DRPGServer.Game
 
         private CancellationTokenSource _cts = new();
         private WildDigimon? wildDigimon { get; set; }
+        private readonly Random dice = new();
 
         // Action queue
         private readonly Dictionary<Serial, Action?> enqueuedActions = [];
@@ -33,11 +34,24 @@ namespace DRPGServer.Game
         {
             // TeamA
             Participants.Add(participant);
-            TeamA.AddRange(participant.Character.MainDigimon);
+            TeamA.Add(participant.Character.MainDigimon);
 
             // TeamB
-            TeamB.Add(enemy.Leader);
-            TeamB.AddRange(enemy.Partners);
+            for (int i = 0; i < 5; i++)
+            {
+                if (enemy.Digimons.Count < (i + 1)) break;
+
+                // First digimon is mandatory
+                if (i == 0)
+                {
+                    TeamB.Add(enemy.Digimons[i]);
+                }
+                else
+                {
+                    if (dice.Next(0, 101) <= enemy.Spawn.DigimonPool[i].AppearanceRate)
+                        TeamB.Add(enemy.Digimons[i]);
+                }
+            }
 
             wildDigimon = enemy;
 
@@ -203,17 +217,21 @@ namespace DRPGServer.Game
 
             if (target.IsKnockedOut)
             {
+                ResetAutoAttackQueue(requester);
                 HandleBattleRewards(requester, target);
             }
 
             requester.CurrentActionGauge = 0;
         }
 
-        private static void HandleBattleRewards(Digimon digimon, Digimon defated)
+        private void HandleBattleRewards(Digimon digimon, Digimon defeated)
         {
             // Define reward value
             long rewardExp = 0;
-            double rewardBits = 10000;
+            wildDigimon?.ExpRewardTable.TryGetValue(defeated.Serial.ToString(), out rewardExp);
+
+            double rewardBits = 0;
+            wildDigimon?.BitRewardTable.TryGetValue(defeated.Serial.ToString(), out rewardBits);
 
             // Effectively add user rewards
             digimon.AddExp(rewardExp);
@@ -242,8 +260,8 @@ namespace DRPGServer.Game
 
         private static int DamageCalc(Digimon attacker, Digimon target)
         {
-            const float BR_MULT = 0.3988f;
-            const float DEF_MULT = 0.2171f;
+            const float BR_MULT = 0.4f;
+            const float DEF_MULT = 0.22f;
 
             float rawDamage = (attacker.ATK * BR_MULT) - (target.DEF * DEF_MULT);
             int finalDamage = (int)Math.Round(rawDamage);
@@ -262,7 +280,7 @@ namespace DRPGServer.Game
                 >= 5 => 90,
                 >= 3 => 83,
                 >= 2 => 70,
-                _ => 37,
+                _ => 38,
             };
         }
 

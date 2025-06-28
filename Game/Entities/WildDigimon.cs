@@ -8,14 +8,16 @@ namespace DRPGServer.Game.Entities
 {
     public class WildDigimon
     {
+        public ushort DisplayDigimonID { get; private set; }
         public Serial Serial { get; private set; } = new();
         public byte MapID { get; set; }
         public short PositionX { get; private set; }
         public short PositionY { get; private set; }
         public byte FacingDirection { get; private set; }
 
-        public Digimon Leader { get; set; }
-        public List<Digimon> Partners { get; set; } = [];
+        public List<Digimon> Digimons { get; set; } = [];
+        public Dictionary<string, long> ExpRewardTable { get; private set; } = [];
+        public Dictionary<string, double> BitRewardTable { get; private set; } = [];
         public DigimonSpawn Spawn { get; private set; }
 
         public bool IsDead { get; set; }
@@ -25,46 +27,31 @@ namespace DRPGServer.Game.Entities
 
         public WildDigimon(DigimonSpawn spawn)
         {
+            DisplayDigimonID = spawn.DisplayDigimonID;
             Spawn = spawn;
             var dice = new Random();
 
             MapID = spawn.MapID;
             RespawnCooldown = spawn.RespawnTime;
 
-            Leader = new Digimon(spawn.DigimonID)
+            foreach (var spawnOption in spawn.DigimonPool)
             {
-                Level = spawn.Level,
-                Name = DigimonDataManager.DigimonTable[spawn.DigimonID].Name
-            };
+                var digimon = new Digimon(spawnOption.DigimonID)
+                {
+                    Level = spawnOption.Level,
+                    STR = spawnOption.STR,
+                    AGI = spawnOption.AGI,
+                    CON = spawnOption.CON,
+                    INT = spawnOption.INT,
+                    Name = DigimonDataManager.DigimonTable[spawnOption.DigimonID].Name
+                };
+                Digimons.Add(digimon);
+                BitRewardTable.Add(digimon.Serial.ToString(), spawnOption.BitReward);
+                ExpRewardTable.Add(digimon.Serial.ToString(), spawnOption.ExpReward);
+                digimon.Heal(digimon.MaxHP, digimon.MaxVP, digimon.MaxEVP); // just in case
+            }
 
             MovePosition((short)dice.Next(spawn.PosXMin, spawn.PosXMax), (short)dice.Next(spawn.PosYMin, spawn.PosYMax));
-
-            int totalChance = 100;
-            int configuredChance = spawn.PartnerPool.Sum(p => p.AppearanceRate);
-            int roll = dice.Next(0, totalChance);
-
-            if (roll < configuredChance)
-            {
-                int cumulative = 0;
-                foreach (var partner in spawn.PartnerPool)
-                {
-                    cumulative += partner.AppearanceRate;
-                    if (roll < cumulative)
-                    {
-                        for (int i = 0; i < partner.Count; i++)
-                        {
-                            Partners.Add(new Digimon(partner.DigimonID)
-                            {
-                                Level = partner.Level,
-                            });
-
-                            if (Partners.Count >= 4) break;
-                        }
-                        break;
-                    }
-                }
-
-            }
         }
 
         public void MovePosition(short newPosX, short newPosY)
@@ -98,13 +85,10 @@ namespace DRPGServer.Game.Entities
         public void Reset()
         {
             IsBusy = false;
-            Leader.CurrentActionGauge = 0;
-            Leader.Heal(Leader.MaxHP, Leader.MaxVP, Leader.MaxEVP);
-
-            foreach (var partner in Partners)
+            foreach (var digimon in Digimons)
             {
-                partner.Heal(partner.MaxHP, partner.MaxVP, partner.MaxEVP);
-                partner.CurrentActionGauge = 0;
+                digimon.Heal(digimon.MaxHP, digimon.MaxVP, digimon.MaxEVP);
+                digimon.CurrentActionGauge = 0;
             }
         }
     }

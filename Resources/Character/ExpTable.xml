@@ -1,4 +1,10 @@
-<ExpTable>
+<CharacterExpTable>
     <Character Level="1" TargetEXP="10"/>
-    <Character Level="2" TargetEXP="30"/>
-</ExpTable>
+    <Character Level="2" TargetEXP="15"/>
+    <Character Level="3" TargetEXP="20"/>
+    <Character Level="4" TargetEXP="25"/>
+    <Character Level="5" TargetEXP="30"/>
+    <Character Level="6" TargetEXP="35"/>
+    <Character Level="7" TargetEXP="40"/>
+    <Character Level="8" TargetEXP="45"/>
+</CharacterExpTable>

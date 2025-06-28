@@ -1,0 +1,3 @@
+<ServerConsts>
+    <Const Key="DIGIMON_MAX_LEVEL" Value="100"/>
+</ServerConsts>

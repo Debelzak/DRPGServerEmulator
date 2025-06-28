@@ -27,15 +27,15 @@ namespace DRPGServer.Network.Handlers.Channel
                 User user = new User(username) { AuthorityLevel = 3 };
 
                 client.SessionStart(user); // Placeholder
-                var digimon = new Digimon((ushort)DIGIMON_ID.GIGIMON)
+                var digimon = new Digimon(10)
                 {
                     UID = 200000,
                     Level = 1,
                     Name = "Guilmon",
-                    STR = 10,//25,
-                    AGI = 10,//20,
-                    CON = 10,//20,
-                    INT = 10,//15,
+                    STR = 10,
+                    AGI = 10,
+                    CON = 10,
+                    INT = 10,
                 };
 
                 var character1 = new Character(digimon)

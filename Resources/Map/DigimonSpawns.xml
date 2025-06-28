@@ -1,5 +1,5 @@
 <DigimonSpawns>
-    <Spawn MapID="79" DigimonID="14" Level="2" MaxCount="3" PosXMin="24" PosYMin="63" PosXMax="33" PosYMax="70" RespawnTime="1">
-        <SpawnPartner DigimonID="14" Level="2" AppearanceRate="100" Count="0"/>
+    <Spawn MapID="79" DisplayDigimonID="14" MaxCount="3" PosXMin="24" PosYMin="63" PosXMax="33" PosYMax="70" RespawnTime="1">
+        <SpawnOption DigimonID="14" Level="2" STR="0" AGI="0" CON="0" INT="0" ExpReward="0" BitReward="16" AppearanceRate="100"/>
     </Spawn>
 </DigimonSpawns>

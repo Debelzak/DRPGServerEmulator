@@ -21,18 +21,17 @@ namespace DRPGServer.Game.Data.Managers
 
             foreach (var spawn in spawns)
             {
-                var digimonId = ushort.Parse(spawn.Attribute("DigimonID")?.Value ?? "0");
-                if (digimonId == 0) continue;
+                var DisplayDigimonID = ushort.Parse(spawn.Attribute("DisplayDigimonID")?.Value ?? "0");
+                if (DisplayDigimonID == 0) continue;
 
-                if (!DigimonDataManager.DigimonTable.TryGetValue(digimonId, out var digimon))
+                if (!DigimonDataManager.DigimonTable.TryGetValue(DisplayDigimonID, out var digimon))
                 {
-                    throw new Exception($"[SpawnDataManager] Digimon ID [{digimonId}] was not found in DigimonData");
+                    throw new Exception($"[SpawnDataManager] Digimon ID [{DisplayDigimonID}] was not found in DigimonData");
                 }
 
                 var add = new DigimonSpawn(digimon.DigimonID)
                 {
                     MapID = byte.Parse(spawn.Attribute("MapID")?.Value ?? "0"),
-                    Level = ushort.Parse(spawn.Attribute("Level")?.Value ?? "0"),
                     PosXMin = short.Parse(spawn.Attribute("PosXMin")?.Value ?? "0"),
                     PosXMax = short.Parse(spawn.Attribute("PosXMax")?.Value ?? "0"),
                     PosYMin = short.Parse(spawn.Attribute("PosYMin")?.Value ?? "0"),
@@ -41,20 +40,30 @@ namespace DRPGServer.Game.Data.Managers
                     RespawnTime = short.Parse(spawn.Attribute("RespawnTime")?.Value ?? "0")
                 };
 
-                var partners = spawn.Elements("SpawnPartner");
-                foreach (var partner in partners)
+                var options = spawn.Elements("SpawnOption");
+                if (!options.Any())
                 {
-                    var partnerDigimonId = ushort.Parse(partner.Attribute("DigimonID")?.Value ?? "0");
-                    if (!DigimonDataManager.DigimonTable.TryGetValue(partnerDigimonId, out var partnerDigimon))
-                    {
-                        throw new Exception($"[SpawnDataManager] Partner Digimon ID [{partnerDigimonId}] was not found in DigimonData");
-                    }
-                    
-                    var partnerLevel = ushort.Parse(partner.Attribute("Level")?.Value ?? "0");
-                    var partnerAppearanceRate = ushort.Parse(partner.Attribute("AppearanceRate")?.Value ?? "0");
-                    var partnerCount = ushort.Parse(partner.Attribute("Count")?.Value ?? "0");
+                    throw new Exception($"[SpawnDataManager] Spawn Digimon ID [{DisplayDigimonID}] in MapID [{add.MapID}] has no spawn options!");
+                }
 
-                    add.AddPartnerOption(partnerDigimonId, partnerLevel, partnerAppearanceRate, partnerCount);
+                foreach (var option in options)
+                {
+                    var DigimonId = ushort.Parse(option.Attribute("DigimonID")?.Value ?? "0");
+                    if (!DigimonDataManager.DigimonTable.TryGetValue(DigimonId, out var optionDigimon))
+                    {
+                        throw new Exception($"[SpawnDataManager] Spawn Option Digimon ID [{DigimonId}] was not found in DigimonData");
+                    }
+
+                    var Level = ushort.Parse(option.Attribute("Level")?.Value ?? "0");
+                    var STR = ushort.Parse(option.Attribute("STR")?.Value ?? "0");
+                    var AGI = ushort.Parse(option.Attribute("AGI")?.Value ?? "0");
+                    var CON = ushort.Parse(option.Attribute("CON")?.Value ?? "0");
+                    var INT = ushort.Parse(option.Attribute("INT")?.Value ?? "0");
+                    var AppearanceRate = ushort.Parse(option.Attribute("AppearanceRate")?.Value ?? "0");
+                    var expReward = long.Parse(option.Attribute("ExpReward")?.Value ?? "0");
+                    var bitReward = double.Parse(option.Attribute("BitReward")?.Value ?? "0");
+
+                    add.AddSpawnOption(DigimonId, Level, STR, AGI, CON, INT, expReward, bitReward, AppearanceRate);
                 }
 
                 Spawns.Add(add);

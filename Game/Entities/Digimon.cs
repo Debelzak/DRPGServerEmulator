@@ -18,17 +18,21 @@ namespace DRPGServer.Game.Entities
         public int CurrentVP { get; private set; }
         public int CurrentEVP { get; private set; }
         public int MaxEVP { get; private set; }
+        private int BaseSTR { get; set; }
         public int STR { get; set; }
+        private int BaseAGI { get; set; }
         public int AGI { get; set; }
+        private int BaseCON { get; set; }
         public int CON { get; set; }
+        private int BaseINT { get; set; }
         public int INT { get; set; }
-        public int MaxHP => (int)MathF.Round(STR * 1.2880f + CON * 2.9809f + 75.9363f);
-        public int MaxVP => (int)MathF.Round(CON * 1.8277f + INT * 2.5518f + 72.8321f);
-        public int ATK => (int)MathF.Round(STR * 2.8199f + AGI * 2.8323f + 93.5256f);
-        public int DEF => (int)MathF.Round(CON * 2.9539f + INT * 0.2177f + 56.9070f);
-        public int BR => (int)MathF.Round(AGI * 1.7256f + INT * 3.2886f + 82.0384f);
+        public int MaxHP => (int)MathF.Round(STR * 0.90f + CON * 3.10f + 75f);
+        public int MaxVP => (int)MathF.Round(CON * 1.4436f + INT * 2.5207f + 75f);
+        public int ATK => (int)MathF.Round(STR * 4.3706f + AGI * 1.8705f + 60.0000f);
+        public int DEF => (int)MathF.Round(CON * 3.0693f + INT * 0.6298f + 43.0000f);
+        public int BR => (int)MathF.Round(AGI * 1.1758f + INT * 3.5702f + 85.0000f);
         public long EXP { get; private set; }
-        public long NextLevelEXP { get; private set; } = 24;
+        public long NextLevelEXP { get; private set; }
         public int TotalWins { get; private set; }
         public int TotalBattles { get; private set; }
         public ushort AbilityPoints { get; private set; }
@@ -51,16 +55,20 @@ namespace DRPGServer.Game.Entities
             Owner ??= owner;
 
             Name = digimonData.Name;
+            BaseSTR = digimonData.BaseSTR;
+            BaseAGI = digimonData.BaseAGI;
+            BaseCON = digimonData.BaseCON;
+            BaseINT = digimonData.BaseINT;
+            MaxActionGauge = digimonData.ActionGauge;
+            NextLevelEXP = GetNextLevelExp(Level);
+            Classification = digimonData.Classification;
 
             CurrentHP = MaxHP;
             CurrentVP = MaxVP;
-            //EVP?
-
-            MaxActionGauge = digimonData.ActionGauge;
-            Classification = digimonData.Classification;
+            CurrentEVP = MaxEVP;
         }
 
-        public static Digimon Empty { get; private set; } = new Digimon(0)
+        public static Digimon Empty { get; private set; } = new Digimon(digimonId: 0)
         {
             UID = 0,
             Serial = new(new byte[16]),
@@ -103,18 +111,18 @@ namespace DRPGServer.Game.Entities
             }
         }
 
-        public void LevelUp()
+        public void LevelUp(ushort amount = 1)
         {
-            Level += 1;
-            STR += 3;
-            AGI += 2;
-            CON += 2;
-            INT += 1;
-            AbilityPoints += 2;
-            SkillPoints += 1;
+            Level += amount;
+            STR += BaseSTR * amount;
+            AGI += BaseAGI * amount;
+            CON += BaseCON * amount;
+            INT += BaseINT * amount;
+            AbilityPoints += (ushort)(2 * amount);
+            SkillPoints += (ushort)(1 * amount);
 
             EXP = 0;
-            NextLevelEXP = GetTargetExp(Level);
+            NextLevelEXP = GetNextLevelExp(Level);
 
             Heal(MaxHP, MaxVP, MaxEVP);
 
@@ -122,14 +130,10 @@ namespace DRPGServer.Game.Entities
             Owner?.Client.Send(levelup);
         }
 
-        public static long GetTargetExp(ushort level)
+        public static long GetNextLevelExp(ushort level)
         {
-            double exp = 0.977 * Math.Pow(level, 3)
-                        - 0.770 * Math.Pow(level, 2)
-                        + 30.29 * level
-                        - 7.14;
-
-            return (long)Math.Round(exp);
+            ExpTableManager.DigimonExpTable.TryGetValue(level, out long nextLevelExp);
+            return (nextLevelExp <= 0) ? long.MaxValue : nextLevelExp;
         }
 
     }
