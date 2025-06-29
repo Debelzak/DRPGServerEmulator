@@ -8,7 +8,6 @@ namespace DRPGServer.Game.Entities
 {
     public class WildDigimon
     {
-        public ushort DisplayDigimonID { get; private set; }
         public Serial Serial { get; private set; } = new();
         public byte MapID { get; set; }
         public short PositionX { get; private set; }
@@ -27,7 +26,6 @@ namespace DRPGServer.Game.Entities
 
         public WildDigimon(DigimonSpawn spawn)
         {
-            DisplayDigimonID = spawn.DisplayDigimonID;
             Spawn = spawn;
             var dice = new Random();
 

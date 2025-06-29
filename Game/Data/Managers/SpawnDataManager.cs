@@ -21,15 +21,7 @@ namespace DRPGServer.Game.Data.Managers
 
             foreach (var spawn in spawns)
             {
-                var DisplayDigimonID = ushort.Parse(spawn.Attribute("DisplayDigimonID")?.Value ?? "0");
-                if (DisplayDigimonID == 0) continue;
-
-                if (!DigimonDataManager.DigimonTable.TryGetValue(DisplayDigimonID, out var digimon))
-                {
-                    throw new Exception($"[SpawnDataManager] Digimon ID [{DisplayDigimonID}] was not found in DigimonData");
-                }
-
-                var add = new DigimonSpawn(digimon.DigimonID)
+                var add = new DigimonSpawn()
                 {
                     MapID = byte.Parse(spawn.Attribute("MapID")?.Value ?? "0"),
                     PosXMin = short.Parse(spawn.Attribute("PosXMin")?.Value ?? "0"),
@@ -42,10 +34,9 @@ namespace DRPGServer.Game.Data.Managers
 
                 var options = spawn.Elements("SpawnOption");
                 if (!options.Any())
-                {
-                    throw new Exception($"[SpawnDataManager] Spawn Digimon ID [{DisplayDigimonID}] in MapID [{add.MapID}] has no spawn options!");
-                }
+                    throw new Exception($"[SpawnDataManager] Spawn in MapID [{add.MapID}] has no spawn options!");
 
+                bool firstElement = true;
                 foreach (var option in options)
                 {
                     var DigimonId = ushort.Parse(option.Attribute("DigimonID")?.Value ?? "0");
@@ -62,6 +53,13 @@ namespace DRPGServer.Game.Data.Managers
                     var AppearanceRate = ushort.Parse(option.Attribute("AppearanceRate")?.Value ?? "0");
                     var expReward = long.Parse(option.Attribute("ExpReward")?.Value ?? "0");
                     var bitReward = double.Parse(option.Attribute("BitReward")?.Value ?? "0");
+
+                    if (firstElement)
+                    {
+                        if (AppearanceRate != 100)
+                            throw new Exception($"[SpawnDataManager] First spawn option must have always 100 AppearanceRate.");
+                    }
+                    firstElement = false;
 
                     add.AddSpawnOption(DigimonId, Level, STR, AGI, CON, INT, expReward, bitReward, AppearanceRate);
                 }

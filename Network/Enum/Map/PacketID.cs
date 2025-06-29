@@ -36,7 +36,19 @@ namespace DRPGServer.Network.Enum.Map
         MAP_BATTLE_REWARD_BIT_EXP = 0x006e,
         MAP_BATTLE_LEVELUP = 0x0070,
 
-        //
+
+        // UI
+        MAP_DIGIMON_ADD_ABILITY_POINT_REQ = 0x0071,
+
+
+        // NPCs
+        MAP_NPC_DIALOG_CHOICE_REQ = 0x0056,
+
+        // Inventory
+        MAP_INVENTORY_ITEM_RECEIVE = 0x00c9,
+        MAP_INVENTORY_REFRESH = 0x00fc,
+
+
         _0xb1_PACKET = 0x00b1, // ?
         MAP_REFRESH_DIGIMON_STATUS = 0x00b2, // ?
         _0x73_PACKET = 0x0073, // ?

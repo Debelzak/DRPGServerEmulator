@@ -1,24 +1,11 @@
 using DRPGServer.Common;
+using DRPGServer.Game.Data.Models;
 
 namespace DRPGServer.Game.Entities
 {
-    public class DigimonSpawn(ushort digimonId)
+    public class DigimonSpawn()
     {
-        public struct DigimonSpawnOption
-        {
-            public ushort DigimonID { get; set; }
-            public ushort Level { get; set; }
-            public int STR { get; set; }
-            public int AGI { get; set; }
-            public int CON { get; set; }
-            public int INT { get; set; }
-            public ushort AppearanceRate { get; set; }
-            public long ExpReward { get; set; }
-            public double BitReward { get; set; }
-        }
-
         public byte MapID { get; set; }
-        public ushort DisplayDigimonID { get; set; } = digimonId;
         public short PosXMin { get; set; }
         public short PosXMax { get; set; }
         public short PosYMin { get; set; }

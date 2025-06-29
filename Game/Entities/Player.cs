@@ -8,9 +8,8 @@ namespace DRPGServer.Game.Entities
     {
         public Client Client { get; private set; }
         public Character Character { get; private set; }
-        public List<Digimon> Digimons { get; set; } = [];
         public Zone Zone { get; set; }
-        public Battle? Battle = null;
+        public Battle? Battle;
         public byte MapID => Character.LocationID;
         public short PositionX => Character.PositionX;
         public short PositionY => Character.PositionY;
@@ -24,7 +23,6 @@ namespace DRPGServer.Game.Entities
             Client = client;
             Character = character;
             Zone = zone;
-            Digimons.Add(Character.MainDigimon);
             Zone.AddPlayer(this);
         }
 
@@ -32,7 +30,8 @@ namespace DRPGServer.Game.Entities
         {
             if (Zone.MapID != mapId)
             {
-                if (!ZoneManager.TransferPlayer(this, mapId)) return;
+                if (!ZoneManager.TransferPlayer(this, mapId))
+                    return;
             }
 
             Character.LocationID = mapId;

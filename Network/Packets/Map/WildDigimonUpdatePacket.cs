@@ -12,7 +12,7 @@ namespace DRPGServer.Network.Packets.Map
             WriteBytes(digimon.Serial.Data); //Field Spawn Hash ?? (For battle is different)
             WriteString(digimon.Digimons[0].Name, 21); // name display
             WriteByte(0);
-            WriteUShort(digimon.DisplayDigimonID); // Display DigimonID
+            WriteUShort(digimon.Digimons[0].DigimonID); // Display DigimonID
             WriteUShort(1); // Evolution Type?
             WriteUShort(digimon.Digimons[0].Level); // Level
             WriteByte(digimon.Digimons[0].Classification); // Name Icon (D) (B*) (V**) (E***) (L****) (Golden Crown) (Platinum Crown)

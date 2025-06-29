@@ -9,7 +9,11 @@ namespace DRPGServer.Network.Packets.Channel
         {
             WriteInt(2);               // 2 = Connect ; 3 = Error ; 
             WriteInt(0);
-            WriteInt(3);
+            WriteInt(0); // Fourth rotational digimon choice: 
+                         // 0 = Chibimon
+                         // 1 = Yarmon
+                         // 2 = Hopmon
+                         // 3 = Dorimon
             WriteString("MoveInteractive_Digimon_035", 40);
         }
     }

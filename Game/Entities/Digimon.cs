@@ -130,6 +130,27 @@ namespace DRPGServer.Game.Entities
             Owner?.Client.Send(levelup);
         }
 
+        public bool AddAbilityPoint(byte statId, bool consumePoints = true)
+        {
+            if (statId < 1 && statId > 4) return false;
+
+            if (consumePoints && AbilityPoints < 1)
+                return false;
+            else
+                AbilityPoints--;
+            
+            switch (statId)
+            {
+                case 1: STR++; break;
+                case 2: AGI++; break;
+                case 3: CON++; break;
+                case 4: INT++; break;
+                default: return false;
+            }
+
+            return true;
+        }
+
         public static long GetNextLevelExp(ushort level)
         {
             ExpTableManager.DigimonExpTable.TryGetValue(level, out long nextLevelExp);

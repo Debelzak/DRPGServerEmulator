@@ -1,4 +1,5 @@
 using DRPGServer.Common;
+using DRPGServer.Game.Data.Models;
 
 namespace DRPGServer.Game.Entities
 {
@@ -10,6 +11,7 @@ namespace DRPGServer.Game.Entities
         public string Nickname = string.Empty;
         public ushort Level;
         public byte[] EquippedItems = new byte[44];
+        public Inventory Inventory { get; private set; } = new();
         public Digimon MainDigimon { get; private set; }
         public double Bits { get; private set; }
         public int TotalBattles;

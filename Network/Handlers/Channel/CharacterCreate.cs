@@ -39,6 +39,10 @@ namespace DRPGServer.Network.Handlers.Channel
             var digimon = new Digimon(digimonId)
             {
                 Name = digimonName,
+                STR = 10,
+                AGI = 10,
+                CON = 10,
+                INT = 10,
             };
 
             var newCharacter = new Character(digimon)
