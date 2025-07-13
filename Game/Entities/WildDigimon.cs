@@ -2,6 +2,7 @@ using System.Security.Cryptography;
 using System.Text.RegularExpressions;
 using DRPGServer.Common;
 using DRPGServer.Game.Data.Managers;
+using DRPGServer.Game.Data.Models;
 using DRPGServer.Game.Enum;
 
 namespace DRPGServer.Game.Entities
@@ -17,6 +18,7 @@ namespace DRPGServer.Game.Entities
         public List<Digimon> Digimons { get; set; } = [];
         public Dictionary<string, long> ExpRewardTable { get; private set; } = [];
         public Dictionary<string, double> BitRewardTable { get; private set; } = [];
+        public Dictionary<string, List<DropTableEntry>> ItemDropTable { get; private set; } = []; 
         public DigimonSpawn Spawn { get; private set; }
 
         public bool IsDead { get; set; }
@@ -46,6 +48,13 @@ namespace DRPGServer.Game.Entities
                 Digimons.Add(digimon);
                 BitRewardTable.Add(digimon.Serial.ToString(), spawnOption.BitReward);
                 ExpRewardTable.Add(digimon.Serial.ToString(), spawnOption.ExpReward);
+
+                DropTableManager.DropTable.TryGetValue(spawnOption.DropGroup, out var dropTable);
+                if (dropTable != null)
+                {
+                    ItemDropTable.Add(digimon.Serial.ToString(), dropTable);
+                }
+                
                 digimon.Heal(digimon.MaxHP, digimon.MaxVP, digimon.MaxEVP); // just in case
             }
 

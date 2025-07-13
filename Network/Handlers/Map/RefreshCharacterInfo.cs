@@ -22,7 +22,7 @@ namespace DRPGServer.Network.Handlers.Map
             var data = new RefreshCharacterInfoPacket
             {
                 CharacterKey = player.Character.Serial.Data,
-                Nickname = player.Character.Nickname,
+                Nickname = player.Character.Name,
                 TamerID = player.Character.TamerID,
                 PositionX = player.Character.PositionX,
                 PositionY = player.Character.PositionY,

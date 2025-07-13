@@ -41,7 +41,7 @@ namespace DRPGServer.Network.Listeners
             client.Send(new _0x0e_Packet()); // Envia o packet de "hello" ou similar
         }
 
-        public User? GetChannelUser(string username)
+        public Account? GetChannelUser(string username)
         {
             var client = ServerManager.ChannelServer.GetClientByUsername(username);
             return client?.User;

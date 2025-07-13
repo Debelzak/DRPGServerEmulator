@@ -5,7 +5,7 @@ using DRPGServer.Network.Enum.Map;
 
 namespace DRPGServer.Network.Packets.Map
 {
-    public class CharacterDataPacket(Player player) : OutPacket((ushort)PACKET_ID.MAP_CHARACTER_DATA)
+    public class CharacterDataPacket(Character character) : OutPacket((ushort)PACKET_ID.MAP_CHARACTER_DATA)
     {
         // Character data
         public uint CharacterUID { get; set; }
@@ -45,20 +45,20 @@ namespace DRPGServer.Network.Packets.Map
         
         protected override void Serialize()
         {
-            WriteUInt(player.Character.UID);
-            WriteBytes(player.Character.Serial.Data); //Character SessionID?
-            WriteString(player.Character.Nickname, 21);
-            WriteByte(player.Character.TamerID);
+            WriteUInt(character.UID);
+            WriteBytes(character.Serial.Data); //Character SessionID?
+            WriteString(character.Name, 21);
+            WriteByte(character.TamerID);
             WriteUShort((ushort)1); // ?
-            WriteUShort(player.Character.Level);
+            WriteUShort(character.Level);
             WriteBytes([0x00, 0x00,]); // ?
             WriteInt(Fame);
             WriteInt(EXP);
             WriteInt(NextLevelEXP);
             WriteBytes([0x00, 0x00, 0x00, 0x00]); // ?
             WriteDouble(Bits);
-            WriteInt(player.Character.TotalWins);
-            WriteInt(player.Character.TotalBattles);
+            WriteInt(character.TotalWins);
+            WriteInt(character.TotalBattles);
             WriteShort(RankedWins);
             WriteShort(RankedBattles);
             WriteInt(RankedPoints);
@@ -138,16 +138,16 @@ namespace DRPGServer.Network.Packets.Map
                 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
             ]);
 
-            WriteUInt(player.Character.MainDigimon.UID); // DigimonID (Database) ?
-            WriteBytes(player.Character.MainDigimon.Serial.Data);
-            WriteUInt(player.Character.MainDigimon.DigimonID);
+            WriteUInt(character.MainDigimon.UID); // DigimonID (Database) ?
+            WriteBytes(character.MainDigimon.Serial.Data);
+            WriteUInt(character.MainDigimon.DigimonID);
             WriteByte((byte)1); // ??
-            WriteString(player.Character.MainDigimon.Name, 21);
-            WriteUShort(player.Character.MainDigimon.Level);
-            WriteInt(player.Character.MainDigimon.STR);
-            WriteInt(player.Character.MainDigimon.AGI);
-            WriteInt(player.Character.MainDigimon.CON);
-            WriteInt(player.Character.MainDigimon.INT);
+            WriteString(character.MainDigimon.Name, 21);
+            WriteUShort(character.MainDigimon.Level);
+            WriteInt(character.MainDigimon.STR);
+            WriteInt(character.MainDigimon.AGI);
+            WriteInt(character.MainDigimon.CON);
+            WriteInt(character.MainDigimon.INT);
             WriteBytes([
                 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
@@ -169,24 +169,24 @@ namespace DRPGServer.Network.Packets.Map
                 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
             ]);
-            WriteInt(player.Character.MainDigimon.CurrentHP);
-            WriteInt(player.Character.MainDigimon.CurrentVP);
-            WriteInt(player.Character.MainDigimon.CurrentEVP);
-            WriteInt(player.Character.MainDigimon.ATK);
-            WriteInt(player.Character.MainDigimon.DEF);
-            WriteInt(player.Character.MainDigimon.BR);
+            WriteInt(character.MainDigimon.CurrentHP);
+            WriteInt(character.MainDigimon.CurrentVP);
+            WriteInt(character.MainDigimon.CurrentEVP);
+            WriteInt(character.MainDigimon.ATK);
+            WriteInt(character.MainDigimon.DEF);
+            WriteInt(character.MainDigimon.BR);
             WriteBytes([0x00, 0x00, 0x00, 0x80, 0x00, 0x00, 0x00, 0x00]);
-            WriteLong(player.Character.MainDigimon.EXP);
+            WriteLong(character.MainDigimon.EXP);
             WriteBytes([0xF4, 0x01, 0x00, 0x00]);
-            WriteInt(player.Character.MainDigimon.MaxHP);
-            WriteInt(player.Character.MainDigimon.MaxVP);
-            WriteInt(player.Character.MainDigimon.MaxEVP);
+            WriteInt(character.MainDigimon.MaxHP);
+            WriteInt(character.MainDigimon.MaxVP);
+            WriteInt(character.MainDigimon.MaxEVP);
             WriteBytes([0x00, 0x00, 0x00, 0x00, 0xA0, 0x86, 0x01, 0x00]);
-            WriteLong(player.Character.MainDigimon.NextLevelEXP);
-            WriteInt(player.Character.MainDigimon.TotalWins);
-            WriteInt(player.Character.MainDigimon.TotalBattles);
-            WriteUShort(player.Character.MainDigimon.AbilityPoints);
-            WriteUShort(player.Character.MainDigimon.SkillPoints);
+            WriteLong(character.MainDigimon.NextLevelEXP);
+            WriteInt(character.MainDigimon.TotalWins);
+            WriteInt(character.MainDigimon.TotalBattles);
+            WriteUShort(character.MainDigimon.AbilityPoints);
+            WriteUShort(character.MainDigimon.SkillPoints);
             WriteBytes([0x0C, 0x00, 0x00, 0x00]); // First skill slot
             WriteBytes([0x06, 0x00]); // ??
             WriteShort(FirstSkillLevel);
@@ -398,8 +398,8 @@ namespace DRPGServer.Network.Packets.Map
                 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
             ]);
-            WriteShort(player.Character.PositionX);
-            WriteShort(player.Character.PositionY);
+            WriteShort(character.PositionX);
+            WriteShort(character.PositionY);
             WriteBytes([
                 0x00, 0x00, 0x00, 0x00,
                 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,

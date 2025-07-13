@@ -1,5 +1,7 @@
 using DRGPServer.Managers;
 using DRPGServer.Common;
+using DRPGServer.Game.Data.Managers;
+using DRPGServer.Game.Data.Models;
 using DRPGServer.Game.Entities;
 using DRPGServer.Network.Packets;
 using DRPGServer.Network.Packets.Map;
@@ -229,9 +231,12 @@ namespace DRPGServer.Game
             // Define reward value
             long rewardExp = 0;
             wildDigimon?.ExpRewardTable.TryGetValue(defeated.Serial.ToString(), out rewardExp);
-
             double rewardBits = 0;
             wildDigimon?.BitRewardTable.TryGetValue(defeated.Serial.ToString(), out rewardBits);
+
+            // Apply modifiers
+            rewardExp = (long)(rewardExp * ServerConsts.Get("REWARD_EXP_RATE"));
+            rewardBits *= ServerConsts.Get("REWARD_BIT_RATE");
 
             // Effectively add user rewards
             digimon.AddExp(rewardExp);
@@ -240,6 +245,21 @@ namespace DRPGServer.Game
             // Send visual feedback to client
             var expBitReward = new RewardBitExpPacket(digimon, rewardExp, rewardBits);
             digimon.Owner?.Client.Send(expBitReward);
+
+            // Drops
+            List<DropTableEntry>? itemDrops = null;
+            wildDigimon?.ItemDropTable.TryGetValue(defeated.Serial.ToString(), out itemDrops);
+            if (itemDrops != null)
+            {
+                var roll = dice.Next(0, 101);
+                foreach (var item in itemDrops)
+                {
+                    if (roll <= item.DropRate)
+                    {
+                        digimon.Owner?.Zone.AddItemDrop(item.ItemID, digimon.Owner.PositionX, digimon.Owner.PositionY);
+                    }
+                }
+            }
         }
 
         private void ResetAutoAttackQueue(Digimon requester)

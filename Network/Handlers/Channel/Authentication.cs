@@ -4,6 +4,7 @@ using DRPGServer.Network.Packets;
 using DRPGServer.Network.Enum.Channel;
 using DRPGServer.Game.Entities;
 using DRPGServer.Game.Enum;
+using DRPGServer.Game.Data.Database.DAOs;
 
 namespace DRPGServer.Network.Handlers.Channel
 {
@@ -22,36 +23,17 @@ namespace DRPGServer.Network.Handlers.Channel
             var mac_2 = packet.ReadString(21);
             var mac_3 = packet.ReadString(21);
 
-            if (username == "debelzak26") // Placeholder connection success
+            var account = AccountDAO.GetAccountByUsername(username);
+            if (account != null && account.AuthKey == authKey)
             {
-                User user = new User(username) { AuthorityLevel = 3 };
+                client.SessionStart(account); // Placeholder
 
-                client.SessionStart(user); // Placeholder
-                var digimon = new Digimon(10)
-                {
-                    UID = 200000,
-                    Level = 1,
-                    Name = "Guilmon",
-                    STR = 10,
-                    AGI = 10,
-                    CON = 10,
-                    INT = 10,
-                };
+                var characters = CharacterDAO.GetAccountCharacters(account.UID);
 
-                var character1 = new Character(digimon)
+                for (byte i = 0; i < 4; i++)
                 {
-                    UID = 50000,
-                    TamerID = (byte)TAMER_ID.TAKATO,
-                    Nickname = "Debelzak",
-                    Level = 1,
-                    PositionX = 29,
-                    PositionY = 67,
-                    EquippedItems = [],
-                    TotalBattles = 0,
-                    TotalWins = 0,
-                    LocationID = (byte)MAP_ID.VILLAGE_OF_BEGINNING,
-                };
-                client.User?.SetCharacterSlot(1, character1);
+                    client.User?.SetCharacterSlot(i, characters[i]);
+                }
 
                 var data = new AuthenticationPacket
                 {

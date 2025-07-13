@@ -13,13 +13,13 @@ namespace DRPGServer.Network.Handlers.Map
         {
             uint choiceId = packet.ReadUInt();
 
-            Console.WriteLine(choiceId);
             switch (choiceId)
             {
                 case 1: Patamon.Handle(client, choiceId); break;
                 case 2: Botamon.Handle(client, choiceId); break;
                 case 3: Mochimon.Handle(client, choiceId); break;
                 case 4: Pyocomon.Handle(client, choiceId); break;
+                case 5: Tunomon.Handle(client, choiceId); break;
                 case 7: Elecmon.Handle(client, choiceId); break;
                 case 8: Elecmon.Handle(client, choiceId); break;
                 default: return;

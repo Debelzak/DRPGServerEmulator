@@ -12,7 +12,7 @@ namespace DRPGServer.Network
         public Guid ConnectionId { get; private set; } = Guid.NewGuid();
         public IPAddress IP { get; }
         public int RemotePort { get; }
-        public User? User { get; private set; }
+        public Account? User { get; private set; }
         public Player? Player { get; private set; }
         public SERVER_TYPE ServerType = SERVER_TYPE.UNKNOWN;
         private readonly Socket socket;
@@ -53,7 +53,7 @@ namespace DRPGServer.Network
             return socket.Receive(buffer);
         }
 
-        public void SessionStart(User user)
+        public void SessionStart(Account user)
         {
             if (User != null) throw new InvalidOperationException("Trying to start an already-started session.");
 
@@ -69,7 +69,7 @@ namespace DRPGServer.Network
             }
         }
 
-        public void SetUser(User user)
+        public void SetUser(Account user)
         {
             if (User != null) throw new InvalidOperationException("Trying to attach user to a client that already has a user.");
             User = user;

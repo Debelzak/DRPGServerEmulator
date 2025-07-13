@@ -53,6 +53,7 @@ namespace DRPGServer.Game.Data.Managers
                     var AppearanceRate = ushort.Parse(option.Attribute("AppearanceRate")?.Value ?? "0");
                     var expReward = long.Parse(option.Attribute("ExpReward")?.Value ?? "0");
                     var bitReward = double.Parse(option.Attribute("BitReward")?.Value ?? "0");
+                    var dropGroup = uint.Parse(option.Attribute("DropGroup")?.Value ?? "0");
 
                     if (firstElement)
                     {
@@ -61,7 +62,7 @@ namespace DRPGServer.Game.Data.Managers
                     }
                     firstElement = false;
 
-                    add.AddSpawnOption(DigimonId, Level, STR, AGI, CON, INT, expReward, bitReward, AppearanceRate);
+                    add.AddSpawnOption(DigimonId, Level, STR, AGI, CON, INT, expReward, bitReward, AppearanceRate, dropGroup);
                 }
 
                 Spawns.Add(add);

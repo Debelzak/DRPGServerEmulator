@@ -3,14 +3,16 @@ using DRPGServer.Network.Packets.Map;
 
 namespace DRPGServer.Network.Handlers.Map.NPC
 {
-    class Mochimon
+    class Tunomon
     {
         public static void Handle(Client client, uint choiceId)
         {
             var inventory = client.Player?.Character.Inventory;
             if (inventory == null) return;
 
-            var item = inventory.TryAddItem(22006, 1);
+            if (!inventory.TryRemoveItem(41, 5)) return;
+            
+            var item = inventory.TryAddItem(22008, 1);
             if (item != null)
             {
                 var packet = new NPCChoicePacket(choiceId);

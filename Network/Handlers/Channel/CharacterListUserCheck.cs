@@ -11,7 +11,9 @@ namespace DRPGServer.Network.Handlers.Channel
         public SERVER_TYPE ServerType => SERVER_TYPE.CHANNEL_SERVER;
         public void Process(InPacket packet, Client client)
         {
-            var data = new CharacterListUserCheckPacket();
+            if (client.User == null) return;
+            
+            var data = new CharacterListUserCheckPacket(client.User);
             client.Send(data);
         }
     }

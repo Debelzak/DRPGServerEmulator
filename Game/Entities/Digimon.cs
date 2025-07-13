@@ -46,13 +46,11 @@ namespace DRPGServer.Game.Entities
         public bool IsKnockedOut => CurrentHP <= 0;
         public bool IsActionGaugeFull => CurrentActionGauge >= MaxActionGauge;
 
-        public Digimon(ushort digimonId, Player? owner = null)
+        public Digimon(ushort digimonId)
         {
             DigimonID = digimonId;
             if (!DigimonDataManager.DigimonTable.TryGetValue(digimonId, out var digimonData))
                 return;
-
-            Owner ??= owner;
 
             Name = digimonData.Name;
             BaseSTR = digimonData.BaseSTR;

@@ -1,39 +1,77 @@
+using DRPGServer.Game.Data.Managers;
+
 namespace DRPGServer.Game.Data.Models
 {
     public class Inventory
     {
-        private Item[] CardSlots { get; set; } = new Item[24];
-        private Item[] ItemSlots { get; set; } = new Item[24];
+        private Item?[] ItemInventory { get; set; } = new Item?[24];
+        private Item?[] CardInventory { get; set; } = new Item?[24];
 
-        public Item? TryAddItem(uint itemId)
+        private readonly uint maxInventoryItems = (uint)ServerConsts.Get("MAX_INVENTORY_ITEMS");
+
+        public Item? TryAddItem(uint itemId, uint amount)
         {
+            // Check for existing item.
+            var item = GetItemByID(itemId);
+            if (item != null)
+            {
+                var newAmount = item.Amount + amount;
+                if (newAmount > maxInventoryItems)
+                    item.Amount = maxInventoryItems;
+                else
+                    item.Amount = newAmount;
+                
+                return item;
+            }
+
+            // Add new item
             for (int i = 0; i < 24; i++)
             {
-                if (ItemSlots[i] == null)
+                if (ItemInventory[i] == null)
                 {
-                    var item = new Item()
+                    var newItem = new Item()
                     {
                         UID = GenerateUID(),
                         ItemID = itemId,
-                        InventorySlot = (uint)i
+                        Amount = (amount > maxInventoryItems) ? maxInventoryItems : amount,
+                        SlotPos = (uint)i
                     };
 
-                    ItemSlots[i] = item;
-                    return ItemSlots[i];
+                    ItemInventory[i] = newItem;
+                    return ItemInventory[i];
                 }
             }
 
             return null;
         }
 
-        public bool HasSpaceForItem()
+        public bool TryRemoveItem(uint itemId, uint amount)
         {
-            return ItemSlots.Any(slot => slot == null);
+            var item = GetItemByID(itemId);
+            if (item == null)
+                return false;
+
+            if (item.Amount < amount)
+                return false;
+
+            item.Amount -= amount;
+
+            if (item.Amount == 0)
+            {
+                ItemInventory[item.SlotPos] = null;
+            }
+
+            return true;
         }
 
-        public bool HasSpaceForCard()
+        public bool HasSpaceForItem(int slotNum = 1)
         {
-            return CardSlots.Any(slot => slot == null);
+            return ItemInventory.Count(slot => slot == null) >= slotNum;
+        }
+
+        public bool HasSpaceForCard(int slotNum = 1)
+        {
+            return CardInventory.Count(slot => slot == null) >= slotNum;
         }
 
         private uint GenerateUID()
@@ -41,9 +79,19 @@ namespace DRPGServer.Game.Data.Models
             return (uint)Random.Shared.Next(10000, 99999);
         }
 
-        public Item? GetItemInSlot(int slotIndex)
+        public Item? GetSlot(int slotIndex)
         {
-            return slotIndex >= 0 && slotIndex < 24 ? ItemSlots[slotIndex] : null;
+            return slotIndex >= 0 && slotIndex < 24 ? ItemInventory[slotIndex] : null;
+        }
+
+        public Item? GetItemByID(uint itemId)
+        {
+            return ItemInventory.FirstOrDefault(d => d != null && d.ItemID == itemId);
+        }
+
+        public Item? GetItemByUID(uint itemUID)
+        {
+            return ItemInventory.FirstOrDefault(d => d != null && d.UID == itemUID);
         }
     }
 }

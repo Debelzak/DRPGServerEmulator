@@ -1,3 +1,4 @@
+using DRPGServer.Game.Data.Managers;
 using DRPGServer.Network.Enum;
 using DRPGServer.Network.Enum.Channel;
 
@@ -9,11 +10,7 @@ namespace DRPGServer.Network.Packets.Channel
         {
             WriteInt(2);               // 2 = Connect ; 3 = Error ; 
             WriteInt(0);
-            WriteInt(0); // Fourth rotational digimon choice: 
-                         // 0 = Chibimon
-                         // 1 = Yarmon
-                         // 2 = Hopmon
-                         // 3 = Dorimon
+            WriteInt((int)ServerConsts.Get("CHARACTER_CREATE_4TH_DIGIMON"));
             WriteString("MoveInteractive_Digimon_035", 40);
         }
     }

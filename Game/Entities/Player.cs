@@ -10,7 +10,7 @@ namespace DRPGServer.Game.Entities
         public Character Character { get; private set; }
         public Zone Zone { get; set; }
         public Battle? Battle;
-        public byte MapID => Character.LocationID;
+        public byte MapID => Character.MapID;
         public short PositionX => Character.PositionX;
         public short PositionY => Character.PositionY;
 
@@ -34,7 +34,7 @@ namespace DRPGServer.Game.Entities
                     return;
             }
 
-            Character.LocationID = mapId;
+            Character.MapID = mapId;
             Character.PositionX = x;
             Character.PositionY = y;
 

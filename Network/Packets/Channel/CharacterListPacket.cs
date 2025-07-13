@@ -22,7 +22,7 @@ namespace DRPGServer.Network.Packets.Channel
             // Tamer info (124 bytes)
             WriteUInt(character.UID);
             WriteByte(character.TamerID);
-            WriteString(character.Nickname, 21);
+            WriteString(character.Name, 21);
             WriteUShort(character.Level);
             WriteShort(character.PositionX);
             WriteShort(character.PositionY);
@@ -45,9 +45,9 @@ namespace DRPGServer.Network.Packets.Channel
             WriteInt(character.TotalBattles);
             WriteInt(character.TotalWins);
             WriteByte(slot);
-            WriteByte(character.LocationID);
+            WriteByte(character.MapID);
             WriteShort(0x0000);                                            //Unknown short // Padding?
-            WriteInt(offset + character.LocationID + character.Level);     //Verification Calc? (Must be random offset below + locationId + tamer level)
+            WriteInt(offset + character.MapID + character.Level);     //Verification Calc? (Must be random offset below + locationId + tamer level)
             WriteInt(offset);                                              //Verification Offset? (Random offset, maybe between 1 and 255)
         }
     }

@@ -1,3 +1,4 @@
+using DRPGServer.Game.Data.Database.DAOs;
 using DRPGServer.Network.Enum;
 using DRPGServer.Network.Enum.Channel;
 using DRPGServer.Network.Packets;
@@ -19,16 +20,19 @@ namespace DRPGServer.Network.Handlers.Channel
             uint characterUid = packet.ReadUInt();
             string passwordMD5 = packet.ReadString(40);
 
-            // Remove character from
-            client.User.RemoveCharacter(characterUid);
+            if (CharacterDAO.DeleteCharacter(characterUid, client.User.UID))
+            {
+                // Remove character from
+                client.User.RemoveCharacter(characterUid);
 
-            // Send response
-            var deletePacket = new CharacterDeletePacket();
-            client.Send(deletePacket);
-
-            // Send chracter list again
-            var refreshedCharacterList = new CharacterListPacket(client.User.Characters);
-            client.Send(refreshedCharacterList);
+                // Send response
+                var deletePacket = new CharacterDeletePacket();
+                client.Send(deletePacket);
+                
+                // Send chracter list again
+                var refreshedCharacterList = new CharacterListPacket(client.User.Characters);
+                client.Send(refreshedCharacterList);
+            }
         }
     }
 }

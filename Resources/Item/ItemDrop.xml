@@ -1,0 +1,6 @@
+<DropTable>
+    <DropGroup ID="1"> <!-- Yuramon's Seed -->
+        <Item ID="41" DropRate="100"/>
+        <Item ID="41" DropRate="50"/>
+    </DropGroup>
+</DropTable>

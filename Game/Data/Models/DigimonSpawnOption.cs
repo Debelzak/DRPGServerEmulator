@@ -12,5 +12,6 @@ namespace DRPGServer.Game.Data.Models
         public ushort AppearanceRate { get; set; }
         public long ExpReward { get; set; }
         public double BitReward { get; set; }
+        public uint DropGroup { get; set; }
     }
 }

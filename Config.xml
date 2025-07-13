@@ -5,4 +5,5 @@
   <LoginServer BindIP="0.0.0.0" Port="7001"/>
   <MapServer BindIP="0.0.0.0" Port="7002"/>
   <GlobalServer BindIP="0.0.0.0" Port="7003"/>
+  <Database Host="localhost" Port="3306" User="root" Pass="root" Database="drpg"/>
 </Config>

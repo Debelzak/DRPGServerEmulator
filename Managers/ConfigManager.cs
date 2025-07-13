@@ -1,4 +1,5 @@
 using System.Xml.Linq;
+using DRPGServer.Game.Data.Database;
 using DRPGServer.Game.Data.Managers;
 using DRPGServer.Managers;
 
@@ -51,6 +52,26 @@ namespace DRPGServer
             DebugMode = bool.TryParse(config.Element("DebugMode")?.Value, out var d1) && d1;
             DebugPackets = bool.TryParse(config.Element("DebugPackets")?.Value, out var d2) && d2;
 
+            try
+            {
+                Logger.Info($"[DATABASE] Connecting to database...");
+                var SqlHost = config.Element("Database")?.Attribute("Host")?.Value ?? "";
+                var SqlPort = config.Element("Database")?.Attribute("Port")?.Value ?? "";
+                var SqlUser = config.Element("Database")?.Attribute("User")?.Value ?? "";
+                var SqlPass = config.Element("Database")?.Attribute("Pass")?.Value ?? "";
+                var SqlDb = config.Element("Database")?.Attribute("Database")?.Value ?? "";
+                Database.Initialize($"server={SqlHost};port={SqlPort};uid={SqlUser};pwd={SqlPass};database={SqlDb}");
+                var conn = Database.GetConnection();
+                conn.Open();
+                Logger.Info($"[DATABASE] Successfully conected to database.");
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                Logger.Error($"[DATABASE] Failed to connect to database: {ex.Message}");
+                Environment.Exit(1);
+            }
+
             ParseServer(config.Element("LoginServer"), LoginServerConfig);
             ParseServer(config.Element("ChannelServer"), ChannelServerConfig);
             ParseServer(config.Element("MapServer"), MapServerConfig);
@@ -60,11 +81,13 @@ namespace DRPGServer
         public static void LoadAll()
         {
             Load();
-            DigimonDataManager.Load();
+            ServerConsts.Load();
             ItemTableManager.Load();
+            DigimonDataManager.Load();
             ExpTableManager.Load();
             PortalDataManager.Load();
             SpawnDataManager.Load();
+            DropTableManager.Load();
             ZoneManager.Load();
         }
 

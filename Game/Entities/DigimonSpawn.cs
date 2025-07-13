@@ -16,7 +16,7 @@ namespace DRPGServer.Game.Entities
         readonly List<DigimonSpawnOption> _digimonPool = [];
         public IReadOnlyList<DigimonSpawnOption> DigimonPool => _digimonPool;
 
-        public void AddSpawnOption(ushort digimonId, ushort level, int str, int agi, int con, int _int, long expReward, double bitReward, ushort appearanceRate)
+        public void AddSpawnOption(ushort digimonId, ushort level, int str, int agi, int con, int _int, long expReward, double bitReward, ushort appearanceRate, uint dropGroup)
         {
             DigimonSpawnOption option = new DigimonSpawnOption()
             {
@@ -29,6 +29,7 @@ namespace DRPGServer.Game.Entities
                 AppearanceRate = appearanceRate,
                 ExpReward = expReward,
                 BitReward = bitReward,
+                DropGroup = dropGroup,
             };
             _digimonPool.Add(option);
         }

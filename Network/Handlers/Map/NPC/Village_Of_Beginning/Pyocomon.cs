@@ -11,7 +11,7 @@ namespace DRPGServer.Network.Handlers.Map.NPC
             var inventory = client.Player?.Character.Inventory;
             if (inventory == null) return;
 
-            var item = inventory.TryAddItem(22007);
+            var item = inventory.TryAddItem(22007, 1);
             if (item != null)
             {
                 var packet = new NPCChoicePacket(choiceId);

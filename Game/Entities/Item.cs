@@ -6,6 +6,7 @@ namespace DRPGServer.Game.Data.Models
     {
         public uint UID;
         public uint ItemID;
-        public uint InventorySlot;
+        public uint Amount;
+        public uint SlotPos;
     }
 }

@@ -12,7 +12,7 @@ namespace DRPGServer.Network.Packets
             WriteBytes([
                 0x01, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00,   0x00, 0x00, 0x00, 0x00,
             ]);
-            WriteUInt(item.InventorySlot);
+            WriteUInt(item.SlotPos);
             WriteUInt(item.UID);
             WriteUInt(item.ItemID);
             WriteBytes([

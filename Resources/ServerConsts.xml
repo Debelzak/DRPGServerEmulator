@@ -1,3 +1,7 @@
 <ServerConsts>
     <Const Key="DIGIMON_MAX_LEVEL" Value="100"/>
+    <Const Key="MAX_INVENTORY_ITEMS" Value="999"/>
+    <Const Key="REWARD_EXP_RATE" Value="1"/>
+    <Const Key="REWARD_BIT_RATE" Value="1"/>
+    <Const Key="CHARACTER_CREATE_4TH_DIGIMON" Value="0"/> <!-- [0: Chibimon; 1: Yarmon; 2: Hopmon; 3: Dorimon;] -->
 </ServerConsts>

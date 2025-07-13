@@ -5,6 +5,7 @@ namespace DRPGServer.Network.Packets.Channel
 {
     class CharacterCreatePacket() : OutPacket((ushort)PACKET_ID.CHANNEL_CHAR_CREATE)
     {
+        public int ErrorCode { get; set; } = 0;
         public byte CharacterModel { get; set; } = 0;
         public string Nickname { get; set; } = string.Empty;
         public ushort DigimonId { get; set; } = 0;
@@ -12,8 +13,8 @@ namespace DRPGServer.Network.Packets.Channel
 
         protected override void Serialize()
         {
-            WriteInt(2);               // Unknown (Client 1, Success from server 2, error 3)
-            WriteInt(0);               // Error code? (If above=2, this=0); 102 = Tamer Already exists
+            WriteInt((ErrorCode == 0) ? 2 : 3);               // Unknown (Client 1, Success from server 2, error 3)
+            WriteInt(ErrorCode);               // Error code? (If above=2, this=0); 102 = Tamer Already exists
             WriteShort((short)0x4f01);   // Unknown
             WriteShort((short)0x003d);   // Random (3B, 3C, 3D, 3E)
             WriteShort((short)0x0038);   // Random (37, 38, 39, 3A)

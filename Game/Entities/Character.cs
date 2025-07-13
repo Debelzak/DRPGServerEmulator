@@ -5,29 +5,22 @@ namespace DRPGServer.Game.Entities
 {
     public class Character
     {
-        public Serial Serial { get; private set; }
-        public uint UID = 0;
+        public Serial Serial { get; private set; } = new();
+        public uint UID;
         public byte TamerID;
-        public string Nickname = string.Empty;
+        public string Name = string.Empty;
         public ushort Level;
         public byte[] EquippedItems = new byte[44];
-        public Inventory Inventory { get; private set; } = new();
-        public Digimon MainDigimon { get; private set; }
+        public Inventory Inventory { get; set; } = new();
+        public Digimon MainDigimon { get; set; } = Digimon.Empty;
         public double Bits { get; private set; }
         public int TotalBattles;
         public int TotalWins;
-        public byte LocationID;
+        public byte MapID;
         public short PositionX { get; set; }
         public short PositionY { get; set; }
 
-        public static Character Empty { get; } = new(Digimon.Empty);
-
-        public Character(Digimon mainDigimon)
-        {
-            MainDigimon = mainDigimon;
-            MainDigimon.Serial = new(Utils.GenerateRandomSessionId(true));
-            Serial = new(Utils.GenerateRandomSessionId(false));
-        }
+        public static Character Empty { get; } = new();
 
         public void AddBits(double incomingValue)
         {

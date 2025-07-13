@@ -29,7 +29,7 @@ namespace DRPGServer.Network.Handlers.Map
             var character = user.GetCharacterSlot((byte)characterSlot);
             if (character == null) return;
 
-            var zone = ZoneManager.GetZoneByMapID(character.LocationID);
+            var zone = ZoneManager.GetZoneByMapID(character.MapID);
             if (zone == null) return;
 
             // Finally proceed
@@ -38,8 +38,7 @@ namespace DRPGServer.Network.Handlers.Map
             player.Character.MainDigimon.SetOwner(player);
             client.SetPlayer(player);
 
-            var userData = new CharacterDataPacket(player);
-
+            var userData = new CharacterDataPacket(player.Character);
             client.Send(userData);
 
             var inventoryData = new InventoryDataPacket();

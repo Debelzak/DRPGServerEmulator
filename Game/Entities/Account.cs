@@ -3,29 +3,30 @@ using DRPGServer.Network;
 
 namespace DRPGServer.Game.Entities
 {
-    public class User(string username)
+    public class Account
     {
-        public uint UID { get; set; } = 0;
-        public string Username { get; private set; } = username;
+        public uint UID { get; set; }
+        public string Username { get; set; } = string.Empty;
+        public string AuthKey { get; set; } = string.Empty;
         public IReadOnlyList<Character> Characters => _characters;
         public byte AuthorityLevel { get; set; } = (byte)AUTHORITY_ID.NONE;
 
-        private readonly Character[] _characters = [new Character(Digimon.Empty), new Character(Digimon.Empty), new Character(Digimon.Empty), new Character(Digimon.Empty)];
+        private readonly Character[] _characters = [new Character(), new Character(), new Character(), new Character()];
 
         public void SetCharacterSlot(byte slot, Character character)
         {
-            if (slot < 1 || slot > 4) throw new ArgumentOutOfRangeException($"Trying to set an invalid character slot: {slot}");
+            if (slot < 0 || slot > 3) throw new ArgumentOutOfRangeException($"Trying to set an invalid character slot: {slot}");
             ArgumentNullException.ThrowIfNull(character);
 
-            _characters[slot - 1] = character;
+            _characters[slot] = character;
         }
 
         public Character GetCharacterSlot(byte slot)
         {
-            if (slot < 1 || slot > 4)
+            if (slot < 0 || slot > 3)
                 throw new ArgumentOutOfRangeException(nameof(slot));
 
-            return _characters[slot - 1];
+            return _characters[slot];
         }
 
         public bool RemoveCharacter(uint uid)
@@ -46,9 +47,9 @@ namespace DRPGServer.Game.Entities
         {
             for (byte i = 0; i < _characters.Length; i++)
             {
-                if (_characters[i] != null && _characters[i].Nickname == nickname)
+                if (_characters[i] != null && _characters[i].Name == nickname)
                 {
-                    return (byte?)(i + 1);
+                    return i;
                 }
             }
 

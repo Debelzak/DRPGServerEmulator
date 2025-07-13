@@ -47,6 +47,8 @@ namespace DRPGServer.Network.Enum.Map
         // Inventory
         MAP_INVENTORY_ITEM_RECEIVE = 0x00c9,
         MAP_INVENTORY_REFRESH = 0x00fc,
+        MAP_ITEM_DROP = 0x0013, // Item on the floor information
+        MAP_ITEM_DROP_GET = 0x0091, // When you get an item from the floor
 
 
         _0xb1_PACKET = 0x00b1, // ?
