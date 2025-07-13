@@ -1,4 +1,4 @@
-using DRPGServer.Game.Data.Database.DAOs;
+using DRPGServer.Game.Data.DAOs;
 using DRPGServer.Network.Enum;
 using DRPGServer.Network.Enum.Channel;
 using DRPGServer.Network.Packets;

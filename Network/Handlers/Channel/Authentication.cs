@@ -4,7 +4,7 @@ using DRPGServer.Network.Packets;
 using DRPGServer.Network.Enum.Channel;
 using DRPGServer.Game.Entities;
 using DRPGServer.Game.Enum;
-using DRPGServer.Game.Data.Database.DAOs;
+using DRPGServer.Game.Data.DAOs;
 
 namespace DRPGServer.Network.Handlers.Channel
 {

@@ -1,7 +1,8 @@
 using DRPGServer.Game.Entities;
 using MySqlConnector;
+using DRPGServer.Common;
 
-namespace DRPGServer.Game.Data.Database.DAOs
+namespace DRPGServer.Game.Data.DAOs
 {
     public static class CharacterDAO
     {

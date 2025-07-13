@@ -1,7 +1,7 @@
 using MySqlConnector;
 using System.Data;
 
-namespace DRPGServer.Game.Data.Database
+namespace DRPGServer.Common
 {
     public static class Database
     {

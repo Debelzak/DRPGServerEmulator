@@ -1,0 +1,29 @@
+{
+    "name": "DRPGServer",
+    "dockerComposeFile": "./docker-compose.yml",
+    "workspaceFolder": "/workspaces/DRPGServer",
+    "service": "server",
+    "runServices": ["database", "server"],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-dotnettools.csharp",
+                "ms-dotnettools.csdevkit"
+            ]
+        }
+    },
+    "portsAttributes": {
+        "7000": {
+            "label": "ChannelServer"
+        },
+        "7001": {
+            "label": "LoginServer"
+        },
+        "7002": {
+            "label": "MapServer"
+        },
+        "7003": {
+            "label": "GlobalServer"
+        }
+    }
+}
